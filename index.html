@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="theme-color" content="#0b6b46">
+  <meta name="description" content="Situs resmi KUA Kecamatan Pulau Laut Tengah, Kabupaten Kotabaru, Kalimantan Selatan. Daftar nikah online, jadwal akad nikah, bimbingan perkawinan, dan informasi layanan Kementerian Agama.">
+  <title>KUA Kecamatan Pulau Laut Tengah</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Fix untuk iOS Modal Scrolling */
+    .modal-open { position: fixed; width: 100%; }
+    /* Fix untuk smooth scrolling di Safari */
+    html { -webkit-overflow-scrolling: touch; }
+    :root{
+      --em-900:#052e1f; --em-800:#063d29; --em-700:#0b6b46; --em-600:#0f8556; --em-100:#dff3e8; --em-50:#f0f9f4;
+      --gold:#f5c542; --gold-d:#d9a519;
+      --ink:#0b1a13; --text:#33443b; --muted:#66776e; --line:#e1eae5; --bg:#f7faf8; --card:#fff;
+      --r-lg:24px; --r-md:16px; --r-sm:12px;
+      --sh-sm:0 1px 2px rgba(6,61,41,.06), 0 2px 8px rgba(6,61,41,.05);
+      --sh-md:0 4px 12px rgba(6,61,41,.07), 0 12px 32px rgba(6,61,41,.08);
+      --sh-lg:0 8px 20px rgba(6,61,41,.10), 0 28px 60px rgba(6,61,41,.14);
+      --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-opacity='.13' stroke-width='1'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter','Segoe UI',system-ui,sans-serif; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; line-height:1.6; padding-bottom:84px}
+    h1,h2,h3,h4,h5,h6,.hd{font-family:'Manrope','Inter',sans-serif; color:var(--ink); letter-spacing:-.025em; font-weight:800}
+    section{scroll-margin-top:96px}
+    .wrap{max-width:1200px; margin:0 auto; padding:0 20px}
+    .sec{padding:84px 0 0}
+    :focus-visible{outline:3px solid var(--gold); outline-offset:2px; border-radius:6px}
+    .skip{position:absolute; left:-999px; top:8px; background:var(--ink); color:#fff; padding:8px 14px; border-radius:8px; z-index:3000}
+    .skip:focus{left:8px}
+    button{font-family:inherit}
+
+    /* ---------- Utility bar ---------- */
+    .util{background:var(--em-900); color:rgba(255,255,255,.82); font-size:.76rem}
+    .util .wrap{display:flex; justify-content:space-between; align-items:center; gap:12px; min-height:36px; flex-wrap:wrap}
+    .util b{color:#fff; font-weight:600}
+    .util i{color:var(--gold); margin-right:6px}
+    .util .r{display:none} @media (min-width:768px){.util .r{display:block}}
+
+    /* ---------- Navbar ---------- */
+    .nav{position:sticky; top:0; z-index:1040; background:rgba(247,250,248,.82); backdrop-filter:saturate(1.4) blur(14px); -webkit-backdrop-filter:saturate(1.4) blur(14px); border-bottom:1px solid transparent; transition:.25s}
+    .nav.scrolled{border-bottom-color:var(--line); background:rgba(255,255,255,.9)}
+    .nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; height:72px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; cursor:pointer; color:var(--ink)}
+    .logo-box{width:44px; height:44px; border-radius:50%; flex:none; display:grid; place-items:center; overflow:hidden; font-size:1.25rem; color:var(--gold); background:linear-gradient(145deg,var(--em-600),var(--em-800)); box-shadow:0 0 0 2px #fff, 0 0 0 3.5px var(--gold)}
+    .logo-box img{width:100%; height:100%; object-fit:contain; background:#fff}
+    .brand b{display:block; font-family:'Manrope'; font-size:.98rem; line-height:1.1; font-weight:800}
+    .brand small{display:block; font-size:.64rem; font-weight:600; letter-spacing:.09em; color:var(--em-700); text-transform:uppercase}
+    .menu{display:none; gap:2px}
+    .menu a{font-size:.88rem; font-weight:600; color:var(--text); text-decoration:none; padding:8px 11px; border-radius:10px; cursor:pointer; transition:.15s}
+    .menu a:hover{background:var(--em-50); color:var(--em-700)}
+    .menu a.active{color:var(--em-700); background:var(--em-100)}
+    @media (min-width:1180px){.menu{display:flex}}
+    .nav-actions{display:flex; align-items:center; gap:10px}
+    .burger{width:44px; height:44px; border-radius:12px; border:1px solid var(--line); background:#fff; font-size:1.4rem; display:grid; place-items:center; color:var(--ink)}
+    @media (min-width:1180px){.burger{display:none}}
+    .hide-sm{display:none} @media (min-width:768px){.hide-sm{display:inline-flex}}
+
+    /* ---------- Buttons ---------- */
+    .btn-x{display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:700; font-size:.92rem; line-height:1; padding:13px 20px; border-radius:12px; border:1px solid transparent; text-decoration:none; cursor:pointer; transition:.18s; white-space:nowrap}
+    .btn-x.primary{background:linear-gradient(180deg,var(--em-600),var(--em-700)); color:#fff; box-shadow:0 1px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(11,107,70,.28)}
+    .btn-x.primary:hover{transform:translateY(-1px); box-shadow:0 1px 0 rgba(255,255,255,.25) inset, 0 10px 22px rgba(11,107,70,.34); color:#fff}
+    .btn-x.gold{background:linear-gradient(180deg,#ffd868,var(--gold)); color:var(--em-900); box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 6px 18px rgba(217,165,25,.35)}
+    .btn-x.gold:hover{transform:translateY(-1px); box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 12px 26px rgba(217,165,25,.45); color:var(--em-900)}
+    .btn-x.ghost{background:#fff; color:var(--ink); border-color:var(--line); box-shadow:var(--sh-sm)}
+    .btn-x.ghost:hover{border-color:var(--em-600); color:var(--em-700); transform:translateY(-1px)}
+    .btn-x.dark{background:var(--em-900); color:#fff} .btn-x.dark:hover{background:var(--em-800); color:#fff}
+    .btn-x.sm{padding:10px 15px; font-size:.82rem; border-radius:10px}
+    .btn-x .ar{transition:.18s} .btn-x:hover .ar{transform:translate(2px,-2px)}
+
+    /* ---------- Section headings ---------- */
+    .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.74rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--em-700)}
+    .eyebrow::before{content:""; width:18px; height:2px; background:var(--gold); border-radius:2px}
+    .sec-title{font-size:clamp(1.8rem,3.8vw,2.7rem); line-height:1.1; margin:10px 0 0}
+    .sec-sub{color:var(--muted); max-width:560px; margin:12px 0 0}
+    .sec-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:34px}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative; overflow:hidden; padding:56px 0 24px}
+    .hero::before{content:""; position:absolute; inset:0; z-index:0;
+      background:
+        radial-gradient(900px 420px at 85% -10%, rgba(15,133,86,.20), transparent 60%),
+        radial-gradient(700px 360px at 0% 10%, rgba(245,197,66,.20), transparent 60%),
+        linear-gradient(180deg,#fff 0%, var(--bg) 100%)}
+    .hero::after{content:""; position:absolute; inset:0; z-index:0; background-image:var(--pattern); filter:invert(1); opacity:.55; -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%); mask-image:linear-gradient(180deg,#000,transparent 70%)}
+    .hero .wrap{position:relative; z-index:1}
+    .kicker{display:inline-flex; align-items:center; gap:10px; padding:6px 14px 6px 6px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:var(--sh-sm); font-size:.8rem; font-weight:600; color:var(--em-800)}
+    .kicker .lg{width:26px; height:26px; border-radius:50%; background:var(--em-700); color:var(--gold); display:grid; place-items:center; font-size:.8rem}
+    .hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem); line-height:1.02; margin:22px 0 18px}
+    .hero h1 .grad{background:linear-gradient(100deg,var(--em-700),var(--em-600) 55%,var(--gold-d)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .hero .lead{font-size:1.08rem; color:var(--muted); max-width:540px}
+    .trust{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:26px; font-size:.82rem; font-weight:600; color:var(--text)}
+    .trust span{display:inline-flex; align-items:center; gap:7px}
+    .trust i{color:var(--em-600)}
+
+    .stage{position:relative; min-height:470px}
+    .dash{position:absolute; left:40px; right:0; top:34px; background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh-lg); padding:22px}
+    .dash-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px}
+    .dash-top b{font-family:'Manrope'; font-size:.95rem; color:var(--ink)}
+    .live{display:inline-flex; align-items:center; gap:6px; font-size:.7rem; font-weight:700; color:var(--em-700); background:var(--em-100); padding:4px 10px; border-radius:999px}
+    .live::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--em-600); animation:blink 1.6s infinite}
+    @keyframes blink{50%{opacity:.25}}
+    .cd{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+    .cd div{background:linear-gradient(180deg,var(--em-50),#fff); border:1px solid var(--em-100); border-radius:14px; text-align:center; padding:14px 4px 10px}
+    .cd b{display:block; font-family:'Manrope'; font-size:2rem; line-height:1; color:var(--em-800); font-weight:800; font-variant-numeric:tabular-nums}
+    .cd small{font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+    .cd-note{font-size:.8rem; color:var(--muted); margin:12px 0 0; display:flex; align-items:center; gap:7px}
+    .cd-note i{color:var(--gold-d)}
+    .nx{display:grid; gap:10px; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line)}
+    .nx div{display:flex; align-items:center; gap:10px; font-size:.88rem; font-weight:600; color:var(--ink)}
+    .nx i{width:30px; height:30px; border-radius:9px; background:var(--em-50); color:var(--em-700); display:grid; place-items:center; font-size:.9rem; flex:none}
+    .float{position:absolute; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:var(--sh-md); padding:12px 14px; display:flex; align-items:center; gap:11px; z-index:2}
+    .float.f1{left:0; top:0}
+    .float.f2{left:0; bottom:0; text-decoration:none; color:var(--ink); transition:.2s; max-width:290px}
+    .float.f2:hover{transform:translateY(-3px); box-shadow:var(--sh-lg); color:var(--ink)}
+    .float .ic{width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:1.1rem; flex:none}
+    .float small{display:block; color:var(--muted); font-size:.7rem; line-height:1.2}
+    .float b{display:block; font-size:.82rem; line-height:1.25; font-family:'Manrope'; color:var(--ink)}
+    .dot{width:10px; height:10px; border-radius:50%; background:#9aa8a1; flex:none}
+    .open .dot{background:#1fb86a; box-shadow:0 0 0 0 rgba(31,184,106,.6); animation:ring 1.6s infinite}
+    .closed .dot{background:#e5604d}
+    @keyframes ring{to{box-shadow:0 0 0 10px rgba(31,184,106,0)}}
+    @media (max-width:991px){
+      .stage{min-height:0; margin-top:44px; display:grid; gap:14px}
+      .dash,.float{position:static} .float.f2{max-width:none}
+    }
+
+    /* ---------- Layanan ---------- */
+    .svc-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    .svc{position:relative; display:flex; flex-direction:column; gap:10px; text-align:left; text-decoration:none; color:var(--text); background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; box-shadow:var(--sh-sm); transition:.22s; cursor:pointer; overflow:hidden; width:100%}
+    .svc:hover{transform:translateY(-4px); box-shadow:var(--sh-md); border-color:#c8dccf; color:var(--text)}
+    .svc .ic{width:50px; height:50px; border-radius:14px; background:var(--em-100); color:var(--em-700); display:grid; place-items:center; font-size:1.45rem; transition:.22s}
+    .svc:hover .ic{background:var(--em-700); color:#fff}
+    .svc h3{font-size:1.1rem; margin:8px 0 0}
+    .svc p{font-size:.88rem; color:var(--muted); margin:0; flex:1}
+    .svc .more{display:inline-flex; align-items:center; gap:6px; font-size:.82rem; font-weight:700; color:var(--em-700); margin-top:6px}
+    .svc .more i{transition:.2s} .svc:hover .more i{transform:translateX(4px)}
+    .svc.feature{grid-column:span 2; grid-row:span 2; border:0; color:#fff; padding:32px; gap:14px; justify-content:flex-end; min-height:420px;
+      background:var(--pattern), radial-gradient(520px 300px at 90% 0%, rgba(245,197,66,.35), transparent 60%), linear-gradient(155deg,var(--em-600),var(--em-800) 70%,var(--em-900))}
+    .svc.feature:hover{color:#fff; box-shadow:var(--sh-lg)}
+    .svc.feature .ic{background:rgba(255,255,255,.14); color:var(--gold); width:58px; height:58px; font-size:1.7rem; backdrop-filter:blur(6px)}
+    .svc.feature:hover .ic{background:var(--gold); color:var(--em-900)}
+    .svc.feature h3{color:#fff; font-size:clamp(1.7rem,3vw,2.3rem); margin:6px 0 0; line-height:1.1}
+    .svc.feature p{color:rgba(255,255,255,.85); font-size:1rem; max-width:420px; flex:0}
+    .badge-x{position:absolute; top:22px; right:22px; background:var(--gold); color:var(--em-900); font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
+    .chips span{font-size:.74rem; font-weight:600; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); padding:5px 11px; border-radius:999px; color:#fff}
+    .feature .go{align-self:flex-start; margin-top:10px}
+    @media (max-width:991px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc.feature{grid-column:span 2; grid-row:auto; min-height:340px}}
+    @media (max-width:560px){.svc-grid{grid-template-columns:1fr}.svc.feature{grid-column:auto; padding:26px}}
+
+    /* ---------- Alur ---------- */
+    .flow{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; position:relative}
+    .flow::before{content:""; position:absolute; left:16%; right:16%; top:34px; border-top:2px dashed #c3d6ca}
+    .fstep{position:relative; text-align:center; padding:0 12px}
+    .fstep .n{width:68px; height:68px; margin:0 auto 18px; border-radius:50%; background:#fff; border:2px solid var(--em-700); display:grid; place-items:center; font-family:'Manrope'; font-weight:800; font-size:1.3rem; color:var(--em-700); box-shadow:0 0 0 6px var(--bg); position:relative; z-index:1}
+    .fstep:nth-child(1) .n{background:var(--em-700); color:var(--gold)}
+    .fstep h4{font-size:1.05rem}
+    .fstep p{font-size:.88rem; color:var(--muted); margin:6px auto 0; max-width:280px}
+    @media (max-width:768px){.flow{grid-template-columns:1fr; gap:28px}.flow::before{display:none}}
+
+    /* ---------- Jadwal ---------- */
+    .panel{background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh-sm); overflow:hidden}
+    .row-j{display:grid; grid-template-columns:76px 1.4fr 1fr 1fr; gap:16px; align-items:center; padding:16px 22px; border-bottom:1px solid var(--line); transition:.15s}
+    .row-j:last-child{border-bottom:0}
+    .row-j:hover{background:var(--em-50)}
+    .dateblk{width:60px; text-align:center; border-radius:14px; background:var(--em-50); border:1px solid var(--em-100); padding:7px 0 6px}
+    .dateblk b{display:block; font-family:'Manrope'; font-size:1.45rem; line-height:1; color:var(--em-800)}
+    .dateblk small{font-size:.66rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--em-600)}
+    .row-j .nm{font-family:'Manrope'; font-weight:800; color:var(--ink); line-height:1.25}
+    .row-j .nm i{color:var(--gold-d); font-style:normal; padding:0 4px}
+    .row-j .sub{font-size:.78rem; color:var(--muted); font-weight:500}
+    .pill{display:inline-flex; align-items:center; gap:6px; font-size:.8rem; font-weight:600; color:var(--text)}
+    .pill i{color:var(--em-600)}
+    .j-head{display:grid; grid-template-columns:76px 1.4fr 1fr 1fr; gap:16px; padding:12px 22px; background:var(--em-50); border-bottom:1px solid var(--line); font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--em-700)}
+    .state{padding:46px 20px; text-align:center; color:var(--muted); font-weight:500}
+    .skel{height:60px; margin:14px 22px; border-radius:14px; background:linear-gradient(90deg,#eef4f0 25%,#f8fbf9 50%,#eef4f0 75%); background-size:200% 100%; animation:sh 1.3s infinite}
+    @keyframes sh{to{background-position:-200% 0}}
+    @media (max-width:768px){
+      .j-head{display:none}
+      .row-j{grid-template-columns:64px 1fr; gap:6px 14px; padding:16px}
+      .row-j .dateblk{grid-row:span 3}
+    }
+
+    /* ---------- About ---------- */
+    .about{display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center}
+    @media (max-width:900px){.about{grid-template-columns:1fr; gap:30px}}
+    .stats{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .stat{background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:22px; box-shadow:var(--sh-sm)}
+    .stat b{font-family:'Manrope'; font-size:2.1rem; line-height:1; color:var(--em-800); font-weight:800; display:block}
+    .stat span{font-size:.82rem; color:var(--muted); font-weight:500; display:block; margin-top:8px}
+    .stat.hl{background:linear-gradient(155deg,var(--em-700),var(--em-800)); border:0} .stat.hl b{color:var(--gold)} .stat.hl span{color:rgba(255,255,255,.82)}
+    .stat:nth-child(2){transform:translateY(14px)} .stat:nth-child(4){transform:translateY(14px)}
+    .ticks{list-style:none; padding:0; margin:22px 0 26px; display:grid; gap:10px}
+    .ticks li{display:flex; gap:10px; align-items:flex-start; font-weight:500}
+    .ticks i{color:var(--em-600); margin-top:3px}
+
+    /* ---------- Informasi ---------- */
+    .info-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+    @media (max-width:991px){.info-grid{grid-template-columns:repeat(2,1fr)}} @media (max-width:520px){.info-grid{grid-template-columns:1fr}}
+    .info{display:flex; align-items:center; gap:14px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:16px 18px; cursor:pointer; transition:.2s; box-shadow:var(--sh-sm); width:100%}
+    .info:hover{border-color:var(--em-600); transform:translateY(-3px); box-shadow:var(--sh-md)}
+    .info .ic{width:42px; height:42px; border-radius:12px; background:var(--em-50); color:var(--em-700); display:grid; place-items:center; font-size:1.2rem; flex:none; transition:.2s}
+    .info:hover .ic{background:var(--em-700); color:#fff}
+    .info b{font-family:'Manrope'; font-size:.92rem; color:var(--ink); line-height:1.25; flex:1}
+    .info > i{color:var(--muted); transition:.2s} .info:hover > i{color:var(--em-700); transform:translateX(3px)}
+
+    /* ---------- Profil ---------- */
+    .org-top{max-width:290px; margin:0 auto; text-align:center; background:linear-gradient(155deg,var(--em-700),var(--em-900)); color:#fff; border-radius:var(--r-lg); padding:26px 20px; box-shadow:var(--sh-md); cursor:pointer; transition:.2s; width:100%; border:0}
+    .org-top:hover{transform:translateY(-3px); box-shadow:var(--sh-lg)}
+    .org-top b{font-family:'Manrope'; font-size:1.05rem; display:block; color:#fff}
+    .org-top small{color:rgba(255,255,255,.78)}
+    .av{width:72px; height:72px; border-radius:50%; margin:0 auto 12px; display:grid; place-items:center; font-family:'Manrope'; font-weight:800; font-size:1.4rem; color:var(--em-800); background:linear-gradient(145deg,#fff,var(--em-100)); box-shadow:0 0 0 3px var(--gold)}
+    .org-line{width:2px; height:32px; background:linear-gradient(var(--em-700),#c3d6ca); margin:0 auto}
+    .team{display:grid; grid-template-columns:repeat(5,1fr); gap:16px; position:relative}
+    @media (max-width:991px){.team{grid-template-columns:repeat(3,1fr)}} @media (max-width:640px){.team{grid-template-columns:repeat(2,1fr)}}
+    .member{background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:22px 12px; text-align:center; box-shadow:var(--sh-sm); cursor:pointer; transition:.2s; width:100%}
+    .member:hover{transform:translateY(-4px); box-shadow:var(--sh-md); border-color:#c8dccf}
+    .member .av{background:linear-gradient(145deg,var(--em-600),var(--em-800)); color:#fff; width:62px; height:62px; font-size:1.2rem; box-shadow:0 0 0 3px var(--em-100)}
+    .member b{display:block; font-family:'Manrope'; font-size:.9rem; color:var(--ink); line-height:1.25}
+    .member small{color:var(--muted); font-size:.76rem}
+
+    /* ---------- Blog ---------- */
+    .posts{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    @media (max-width:900px){.posts{grid-template-columns:1fr 1fr}} @media (max-width:560px){.posts{grid-template-columns:1fr}}
+    .post{background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--sh-sm); cursor:pointer; transition:.22s; text-align:left; display:flex; flex-direction:column; width:100%; padding:0}
+    .post:hover{transform:translateY(-4px); box-shadow:var(--sh-md)}
+    .post .th{height:178px; position:relative; display:grid; place-items:center; font-size:2.4rem; color:rgba(255,255,255,.8);
+      background:var(--pattern), linear-gradient(135deg,var(--em-600),var(--em-800))}
+    .post:nth-child(2) .th{background:var(--pattern), linear-gradient(135deg,#c99a14,#7a5a08)}
+    .post:nth-child(3) .th{background:var(--pattern), linear-gradient(135deg,#1f7a8c,#0e4a58)}
+    .post .th img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    .post .cat{position:absolute; left:14px; top:14px; background:#fff; color:var(--em-800); font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:4px 11px; border-radius:999px}
+    .post .bd{padding:20px}
+    .post h5{font-size:1.05rem; line-height:1.3; margin:0 0 10px}
+    .post small{color:var(--muted); font-weight:500}
+
+    /* ---------- Kontak ---------- */
+    .contact{background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); padding:30px; box-shadow:var(--sh-sm); height:100%}
+    .citem{display:flex; gap:14px; margin-top:20px}
+    .citem .ic{width:44px; height:44px; border-radius:12px; background:var(--em-50); color:var(--em-700); display:grid; place-items:center; flex:none; font-size:1.1rem}
+    .citem b{display:block; color:var(--ink); font-size:.92rem} .citem span{font-size:.88rem; color:var(--muted)}
+    .map{height:100%; min-height:320px; border-radius:var(--r-lg); border:1px solid var(--line); box-shadow:var(--sh-sm); cursor:pointer; display:grid; place-items:center; text-align:center; padding:20px; width:100%;
+      background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)), linear-gradient(var(--em-100) 1px,transparent 1px) 0 0/34px 34px, linear-gradient(90deg,var(--em-100) 1px,transparent 1px) 0 0/34px 34px, #eaf6ef; color:var(--em-800)}
+    .map .pin{width:62px; height:62px; border-radius:50%; background:var(--em-700); color:var(--gold); display:grid; place-items:center; font-size:1.7rem; margin:0 auto 12px; box-shadow:0 0 0 10px rgba(11,107,70,.12)}
+
+    /* ---------- CTA ---------- */
+    .cta{margin-top:96px; border-radius:32px; padding:clamp(32px,5vw,60px); color:#fff; position:relative; overflow:hidden;
+      background:var(--pattern), radial-gradient(500px 280px at 100% 0%, rgba(245,197,66,.4), transparent 60%), linear-gradient(135deg,var(--em-700),var(--em-900))}
+    .cta h2{color:#fff; font-size:clamp(1.8rem,4vw,3rem); line-height:1.08; max-width:640px; margin:0 0 12px}
+    .cta p{color:rgba(255,255,255,.85); max-width:520px; margin:0 0 26px}
+
+    /* ---------- Footer ---------- */
+    footer{background:var(--em-900); color:rgba(255,255,255,.75); margin-top:96px; padding:64px 0 28px; position:relative; overflow:hidden}
+    footer::before{content:""; position:absolute; inset:0; background-image:var(--pattern); opacity:.5}
+    footer .wrap{position:relative}
+    footer a,footer .lnk{color:rgba(255,255,255,.75); text-decoration:none; font-size:.9rem; cursor:pointer; background:none; border:0; padding:0}
+    footer a:hover,footer .lnk:hover{color:var(--gold)}
+    footer h6{color:#fff; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px; font-family:'Inter'; font-weight:700}
+    footer ul{list-style:none; padding:0; margin:0} footer li{margin-bottom:10px}
+    footer .brand b{color:#fff} footer .brand small{color:var(--gold)}
+    .copy{border-top:1px solid rgba(255,255,255,.14); margin-top:40px; padding-top:22px; font-size:.8rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px}
+
+    /* ---------- Mobile CTA bar ---------- */
+    .mbar{position:fixed; left:0; right:0; bottom:0; z-index:1045; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-top:1px solid var(--line); padding:10px 14px calc(10px + env(safe-area-inset-bottom)); display:flex; gap:10px}
+    .mbar .btn-x{flex:1; padding:13px 10px}
+    @media (min-width:992px){.mbar{display:none} body{padding-bottom:0}}
+
+    /* ---------- Modals, form, toast ---------- */
+    .modal-content{border:0; border-radius:var(--r-lg); box-shadow:var(--sh-lg); overflow:hidden}
+    .modal-header{border:0; padding:22px 24px 8px}
+    .modal-header .modal-title{font-family:'Manrope'; font-weight:800; color:var(--ink); font-size:1.15rem; display:flex; align-items:center; gap:10px}
+    .modal-header .ti{width:36px; height:36px; border-radius:10px; background:var(--em-100); color:var(--em-700); display:grid; place-items:center; font-size:1rem}
+    .modal-body{padding:12px 24px 26px}
+    .form-label{font-size:.8rem; font-weight:700; color:var(--ink); margin-bottom:6px}
+    .form-control,.form-select{border:1px solid #cfdcd4; border-radius:12px; padding:11px 14px; font-size:.92rem; background-color:#fff}
+    .form-control:focus,.form-select:focus{border-color:var(--em-600); box-shadow:0 0 0 4px rgba(15,133,86,.15)}
+    .list-group-item{border-color:var(--line); padding-left:0; padding-right:0}
+    .toasts{position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:3000; display:grid; gap:10px; width:min(92vw,420px)}
+    .tst{display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-left:5px solid var(--em-600); border-radius:14px; padding:14px 16px; box-shadow:var(--sh-lg); font-size:.9rem; font-weight:500; color:var(--ink); animation:tin .3s ease}
+    .tst.err{border-left-color:#e5604d} .tst i{font-size:1.2rem; color:var(--em-600); margin-top:1px} .tst.err i{color:#e5604d}
+    @keyframes tin{from{opacity:0; transform:translateY(-12px)}}
+
+    .rv{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+    .rv.in{opacity:1; transform:none}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important; scroll-behavior:auto!important}.rv{opacity:1; transform:none}}
+  
+    /* =================== TAMBAHAN V3.1 =================== */
+    .hide-xl{display:none} @media (min-width:1380px){.hide-xl{display:inline-flex}}
+    .sub-h{display:flex; align-items:center; gap:12px; font-size:1.15rem; margin:0 0 18px}
+    .sub-h::after{content:""; flex:1; height:1px; background:var(--line)}
+    .sub-h small{font-family:'Inter'; font-weight:600; font-size:.78rem; color:var(--muted); order:3}
+
+    /* ---------- Katalog layanan ---------- */
+    .cat-layout{display:grid; grid-template-columns:300px 1fr; gap:24px; align-items:start}
+    .cat-nav{display:grid; gap:8px; position:sticky; top:96px}
+    .cat-btn{display:flex; align-items:center; gap:12px; text-align:left; width:100%; padding:13px 14px; border:1px solid var(--line); background:#fff; border-radius:16px; cursor:pointer; transition:.2s; color:var(--ink); box-shadow:var(--sh-sm)}
+    .cat-btn:hover{border-color:var(--em-600); transform:translateX(3px)}
+    .cat-btn .ic{width:38px; height:38px; border-radius:11px; background:var(--em-100); color:var(--em-700); display:grid; place-items:center; font-size:1.05rem; flex:none; transition:.2s}
+    .cat-btn b{font-family:'Manrope'; font-size:.88rem; line-height:1.25; flex:1}
+    .cat-btn .n{font-size:.7rem; font-weight:700; background:var(--em-50); color:var(--em-700); border-radius:999px; padding:2px 9px; flex:none}
+    .cat-btn .short{display:none}
+    .cat-btn.active{background:linear-gradient(155deg,var(--em-600),var(--em-800)); color:#fff; border-color:transparent; box-shadow:var(--sh-md); transform:none}
+    .cat-btn.active b{color:#fff} .cat-btn.active .ic{background:rgba(255,255,255,.16); color:var(--gold)} .cat-btn.active .n{background:rgba(255,255,255,.18); color:#fff}
+    .cat-head{display:flex; align-items:flex-start; gap:16px; margin-bottom:18px}
+    .cat-head .ic{width:54px; height:54px; border-radius:16px; background:var(--em-700); color:var(--gold); display:grid; place-items:center; font-size:1.5rem; flex:none}
+    .cat-head h3{font-size:1.4rem; margin:0 0 4px} .cat-head p{margin:0; color:var(--muted); font-size:.92rem}
+    .svc-list{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .svc-item{display:flex; flex-direction:column; gap:8px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:18px; cursor:pointer; transition:.2s; box-shadow:var(--sh-sm); width:100%; position:relative}
+    .svc-item:hover{transform:translateY(-3px); box-shadow:var(--sh-md); border-color:#c8dccf}
+    .svc-item .top{display:flex; align-items:center; gap:12px}
+    .svc-item .ic{width:42px; height:42px; border-radius:12px; background:var(--em-50); color:var(--em-700); display:grid; place-items:center; font-size:1.2rem; flex:none; transition:.2s}
+    .svc-item:hover .ic{background:var(--em-700); color:#fff}
+    .svc-item b{font-family:'Manrope'; font-size:.98rem; color:var(--ink); line-height:1.25; flex:1}
+    .svc-item p{margin:0; font-size:.84rem; color:var(--muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+    .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px}
+    .tg{font-size:.68rem; font-weight:700; letter-spacing:.04em; padding:3px 9px; border-radius:999px; background:var(--em-50); color:var(--em-700); border:1px solid var(--em-100)}
+    .tg.online{background:#fff6d6; color:#8a6500; border-color:#f3e0a0}
+    .tg.realtime{background:var(--em-100); color:var(--em-800)}
+    .tg.realtime::before{content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--em-600); margin-right:5px; animation:blink 1.6s infinite}
+    .tg.kalkulator{background:#e6f1ff; color:#1b5aa6; border-color:#c6defa}
+    .tg.form{background:#f1ebff; color:#5a3aa8; border-color:#ddd0fa}
+    @media (max-width:991px){
+      .cat-layout{grid-template-columns:1fr}
+      .cat-nav{display:flex; overflow-x:auto; position:static; padding:2px 2px 8px; scrollbar-width:none}
+      .cat-nav::-webkit-scrollbar{display:none}
+      .cat-btn{flex:0 0 auto; width:auto; white-space:nowrap}
+      .cat-btn:hover{transform:none} .cat-btn b{flex:none} .cat-btn .full{display:none} .cat-btn .short{display:inline}
+      .cat-btn .n{display:none}
+    }
+    @media (max-width:640px){.svc-list{grid-template-columns:1fr}}
+
+    /* ---------- Detail layanan ---------- */
+    .sec-label{font-family:'Manrope'; font-weight:800; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--em-700); margin:22px 0 10px; display:flex; align-items:center; gap:8px}
+    .sec-label::before{content:""; width:14px; height:2px; background:var(--gold); border-radius:2px}
+    .modal-body .lead-t{color:var(--text); margin:0}
+    .checks{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+    .checks li{display:flex; gap:10px; font-size:.9rem} .checks i{color:var(--em-600); margin-top:3px}
+    .steps-ol{list-style:none; padding:0; margin:0; counter-reset:st; display:grid; gap:12px}
+    .steps-ol li{counter-increment:st; position:relative; padding-left:44px; font-size:.92rem; min-height:32px}
+    .steps-ol li::before{content:counter(st); position:absolute; left:0; top:0; width:30px; height:30px; border-radius:50%; background:var(--em-700); color:var(--gold); display:grid; place-items:center; font-family:'Manrope'; font-weight:800; font-size:.85rem}
+    .steps-ol li:not(:last-child)::after{content:""; position:absolute; left:14px; top:32px; bottom:-12px; width:2px; background:var(--em-100)}
+    .tabs-x{display:flex; gap:6px; background:var(--em-50); border:1px solid var(--em-100); padding:5px; border-radius:14px; margin-bottom:16px; flex-wrap:wrap}
+    .tabs-x button{flex:1; border:0; background:transparent; padding:10px 14px; border-radius:10px; font-weight:700; font-size:.85rem; color:var(--text); cursor:pointer; transition:.15s}
+    .tabs-x button.on{background:#fff; color:var(--em-700); box-shadow:var(--sh-sm)}
+    .tab-pane{display:none} .tab-pane.on{display:block}
+    .callout{background:#fff9e6; border:1px solid #f3e0a0; border-left:4px solid var(--gold); border-radius:12px; padding:12px 14px; font-size:.86rem; color:#5c4700; margin-top:20px}
+    .callout i{color:var(--gold-d); margin-right:6px}
+    .disclaimer{font-size:.76rem; color:var(--muted); margin-top:16px; padding-top:14px; border-top:1px dashed var(--line)}
+    .modal-footer{border:0; padding:6px 24px 22px; gap:10px; justify-content:flex-start; flex-wrap:wrap}
+    .modal-footer .btn-x{margin:0}
+    .modal-footer.between{justify-content:space-between}
+
+    /* ---------- Modal jadwal ---------- */
+    .group-t{font-family:'Manrope'; font-weight:800; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--em-700); margin:6px 0 10px}
+    .row-j.past{opacity:.55}
+    #kontenJadwalModal .panel .row-j{padding:14px 16px}
+
+    /* ---------- Kalkulator waris ---------- */
+    .money{position:relative} .money span{position:absolute; left:14px; top:50%; transform:translateY(-50%); font-weight:700; color:var(--muted); font-size:.85rem}
+    .money input{padding-left:42px}
+    .heirs{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    @media (max-width:640px){.heirs{grid-template-columns:1fr}}
+    .heir{display:flex; align-items:center; justify-content:space-between; gap:10px; border:1px solid var(--line); border-radius:14px; padding:10px 12px; background:#fff}
+    .heir b{display:block; font-size:.84rem; color:var(--ink); line-height:1.25; font-family:'Manrope'}
+    .heir small{color:var(--muted); font-size:.7rem; line-height:1.2; display:block}
+    .stp{display:flex; align-items:center; gap:4px; flex:none}
+    .stp button{width:30px; height:30px; border-radius:9px; border:1px solid var(--line); background:var(--em-50); color:var(--em-800); font-weight:800; line-height:1}
+    .stp button:hover{background:var(--em-100)}
+    .stp input{width:44px; text-align:center; border:1px solid var(--line); border-radius:9px; height:30px; font-weight:700; padding:0; -moz-appearance:textfield}
+    .stp input::-webkit-outer-spin-button,.stp input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+    .res-sum{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:14px}
+    @media (max-width:640px){.res-sum{grid-template-columns:1fr 1fr}}
+    .res-sum div{background:var(--em-50); border:1px solid var(--em-100); border-radius:12px; padding:10px 12px}
+    .res-sum small{display:block; font-size:.66rem; color:var(--muted); font-weight:700; letter-spacing:.06em; text-transform:uppercase}
+    .res-sum b{font-family:'Manrope'; font-size:.95rem; color:var(--em-800)}
+    .tbl-w{overflow-x:auto; border:1px solid var(--line); border-radius:14px}
+    .tbl-w table{width:100%; min-width:640px; border-collapse:collapse; font-size:.85rem}
+    .tbl-w th{background:var(--em-50); color:var(--em-700); font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; padding:10px 12px; text-align:left; white-space:nowrap}
+    .tbl-w td{padding:11px 12px; border-top:1px solid var(--line); vertical-align:top}
+    .tbl-w tr.mh td{color:var(--muted); background:#fafbfa}
+    .frac{font-family:'Manrope'; font-weight:800; color:var(--em-800)}
+    .note-l{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:8px; font-size:.82rem}
+    .note-l li{display:flex; gap:8px} .note-l i{color:var(--gold-d); margin-top:3px}
+
+    /* ---------- Struktur organisasi (pohon) ---------- */
+    .org-top{display:block; margin:0 auto; width:100%; max-width:290px}
+    .tree-h{height:2px; background:#c3d6ca; margin:0 10%}
+    .team{margin-top:18px}
+    .member{position:relative}
+    .member::before{content:""; position:absolute; left:50%; top:-18px; width:2px; height:18px; background:#c3d6ca; transform:translateX(-1px)}
+    @media (max-width:991px){.tree-h{display:none} .member::before{display:none} .team{margin-top:0} .org-line{height:24px}}
+
+</style>
+</head>
+<body>
+  <a href="#" class="skip" data-scroll="konten">Lewati ke konten</a>
+
+  <!-- ================= UTILITY BAR ================= -->
+  <div class="util">
+    <div class="wrap">
+      <span><i class="bi bi-patch-check-fill"></i><b>Kementerian Agama Republik Indonesia</b> · Kab. Kotabaru, Kalimantan Selatan</span>
+      <span class="r"><i class="bi bi-clock"></i>Layanan Senin – Jumat, 08.00 – 16.00 WITA</span>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a href="#" class="brand" data-scroll="beranda" aria-label="KUA Kecamatan Pulau Laut Tengah, beranda">
+        <div class="logo-box"><i class="bi bi-moon-stars-fill js-logo-fallback"></i><img class="js-logo" alt="Logo Kementerian Agama" hidden></div>
+        <div><b>KUA Pulau Laut Tengah</b><small>Kementerian Agama RI</small></div>
+      </a>
+      <nav class="menu" aria-label="Navigasi utama">
+        <a href="#" data-scroll="beranda" class="active">Home</a>
+        <a href="#" data-scroll="layanan">Layanan KUA</a>
+        <a href="#" data-scroll="informasi">Informasi KUA</a>
+        <a href="#" data-scroll="blog">Berita KUA</a>
+        <a href="#" data-scroll="profil">Profil KUA</a>
+        <a href="#" data-scroll="tentang">Tentang KUA</a>
+        <a href="#" data-scroll="kontak">Kontak KUA</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-x ghost sm hide-xl" data-bs-toggle="modal" data-bs-target="#modalBukuTamu"><i class="bi bi-journal-text"></i> Buku Tamu</button>
+        <a class="btn-x gold sm hide-sm" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">Daftar Nikah Online <i class="bi bi-arrow-up-right ar"></i></a>
+        <button class="burger" data-bs-toggle="offcanvas" data-bs-target="#menuMobile" aria-label="Buka menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Offcanvas mobile -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="menuMobile" aria-label="Menu">
+    <div class="offcanvas-header">
+      <div class="brand"><div class="logo-box"><i class="bi bi-moon-stars-fill js-logo-fallback"></i><img class="js-logo" alt="Logo Kementerian Agama" hidden></div><div><b>KUA Pulau Laut Tengah</b><small>Kementerian Agama RI</small></div></div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <nav class="d-grid gap-1 mb-4">
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="beranda">Home <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="layanan">Layanan KUA <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="informasi">Informasi KUA <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="blog">Berita KUA <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="profil">Profil KUA <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="tentang">Tentang KUA <i class="bi bi-chevron-right"></i></a>
+        <a href="#" class="btn-x ghost justify-content-between" data-scroll="kontak">Kontak KUA <i class="bi bi-chevron-right"></i></a>
+      </nav>
+      <a class="btn-x gold mt-auto" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">Daftar Nikah Online <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Mobile sticky CTA -->
+  <div class="mbar">
+    <a class="btn-x gold" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener"><i class="bi bi-heart-fill"></i> Daftar Nikah</a>
+    <button class="btn-x ghost" data-bs-toggle="modal" data-bs-target="#modalBukuTamu"><i class="bi bi-journal-text"></i> Buku Tamu</button>
+  </div>
+
+  <main id="konten">
+    <!-- ================= HOME ================= -->
+    <section id="beranda" class="hero">
+      <div class="wrap">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="kicker"><span class="lg"><i class="bi bi-stars"></i></span> Layanan digital Kantor Urusan Agama</span>
+            <h1>KUA Kecamatan <span class="grad">Pulau Laut Tengah</span></h1>
+            <p class="lead">Daftar nikah online, pantau jadwal akad, dan ikuti bimbingan perkawinan. Layanan Kementerian Agama yang lebih dekat dan mudah untuk masyarakat Pulau Laut Tengah.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn-x gold" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener"><i class="bi bi-heart-fill"></i> Daftar Nikah Online <i class="bi bi-arrow-up-right ar"></i></a>
+              <button class="btn-x ghost" data-scroll="layanan"><i class="bi bi-grid"></i> Lihat Layanan KUA</button>
+            </div>
+            <div class="trust">
+              <span><i class="bi bi-shield-check"></i> Resmi Kementerian Agama RI</span>
+              <span><i class="bi bi-laptop"></i> Pendaftaran online lewat SIMKAH</span>
+              <span><i class="bi bi-geo-alt"></i> Kab. Kotabaru, Kalsel</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="stage">
+              <div class="float f1" id="statusKantor"><span class="dot"></span><div><small>Status kantor</small><b id="statusText">Memuat status...</b></div></div>
+
+              <div class="dash" id="countdownContainer">
+                <div class="dash-top"><b>Akad Nikah Terdekat</b><span class="live">Real-time</span></div>
+                <div class="cd">
+                  <div><b id="cdD">--</b><small>Hari</small></div>
+                  <div><b id="cdH">--</b><small>Jam</small></div>
+                  <div><b id="cdM">--</b><small>Menit</small></div>
+                  <div><b id="cdS">--</b><small>Detik</small></div>
+                </div>
+                <p class="cd-note"><i class="bi bi-heart-fill"></i><span id="countdownText">Menghitung...</span></p>
+                <div class="nx">
+                  <div><i class="bi bi-calendar3"></i><span id="nxTanggal">–</span></div>
+                  <div><i class="bi bi-clock"></i><span id="nxWaktu">–</span></div>
+                  <div><i class="bi bi-geo-alt-fill"></i><span id="nxLokasi">–</span></div>
+                </div>
+                <button class="btn-x primary w-100 mt-3" data-open="modalJadwal"><i class="bi bi-calendar-heart"></i> Lihat Jadwal Nikah</button>
+              </div>
+
+              <a class="float f2" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">
+                <div class="ic" style="background:var(--gold);color:var(--em-900)"><i class="bi bi-laptop"></i></div>
+                <div><small>Terhubung ke SIMKAH</small><b>Daftar nikah online, kapan saja</b></div>
+                <i class="bi bi-arrow-up-right ms-auto"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LAYANAN KUA ================= -->
+    <section id="layanan" class="sec wrap rv">
+      <div class="sec-head">
+        <div><span class="eyebrow">Layanan KUA</span><h2 class="sec-title">Semua layanan, satu tempat</h2>
+          <p class="sec-sub">Mulai dari layanan unggulan yang bisa langsung diakses, hingga katalog lengkap layanan KUA beserta tujuan dan tata caranya.</p></div>
+      </div>
+
+      <h3 class="sub-h">Layanan Unggulan <small>Akses langsung</small></h3>
+      <div class="svc-grid">
+        <!-- 1. Daftar Nikah Online -->
+        <a class="svc feature" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">
+          <span class="badge-x">Layanan Utama</span>
+          <div class="ic"><i class="bi bi-laptop"></i></div>
+          <h3>Daftar Nikah Online</h3>
+          <p>Daftarkan pernikahan Anda langsung melalui SIMKAH Kemenag, tanpa antre dan bisa dari rumah.</p>
+          <div class="chips"><span>Resmi Kemenag</span><span>Via SIMKAH</span><span>Kapan saja</span></div>
+          <span class="btn-x gold go">Daftar Sekarang <i class="bi bi-arrow-up-right ar"></i></span>
+        </a>
+        <!-- 2. Jadwal Nikah -->
+        <button type="button" class="svc" data-bs-toggle="modal" data-bs-target="#modalJadwal">
+          <div class="ic"><i class="bi bi-calendar-heart"></i></div>
+          <h3>Jadwal Nikah</h3><p>Lihat jadwal pernikahan real-time di KUA.</p>
+          <span class="more">Buka jadwal <i class="bi bi-arrow-right"></i></span>
+        </button>
+        <!-- 3. Buku Tamu -->
+        <button type="button" class="svc" data-bs-toggle="modal" data-bs-target="#modalBukuTamu">
+          <div class="ic"><i class="bi bi-journal-text"></i></div>
+          <h3>Buku Tamu</h3><p>Isi buku tamu dan dokumentasi pelayanan.</p>
+          <span class="more">Isi buku tamu <i class="bi bi-arrow-right"></i></span>
+        </button>
+        <!-- 4. Pendaftaran Bimwin -->
+        <a class="svc" data-bimwin="daftar" href="https://forms.gle/jBU4S2p4zVeKAg12A" target="_blank" rel="noopener">
+          <div class="ic"><i class="bi bi-people"></i></div>
+          <h3>Pendaftaran Bimwin</h3><p>Formulir pendaftaran bimbingan perkawinan.</p>
+          <span class="more">Daftar sekarang <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <!-- 5. Form Bimwin -->
+        <a class="svc" data-bimwin="form" href="https://bit.ly/BimwinKUA" target="_blank" rel="noopener">
+          <div class="ic"><i class="bi bi-file-earmark-text"></i></div>
+          <h3>Form Bimwin</h3><p>Akses link form bimbingan perkawinan.</p>
+          <span class="more">Buka formulir <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+
+      <h3 class="sub-h" style="margin-top:54px">Katalog Layanan KUA <small>Klik layanan untuk melihat tujuan &amp; tata cara</small></h3>
+      <div class="cat-layout">
+        <div class="cat-nav" id="catNav" role="tablist" aria-label="Kategori layanan"></div>
+        <div id="catPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ================= ALUR ================= -->
+    <section class="sec wrap rv">
+      <div class="text-center mb-5"><span class="eyebrow">Alur Pelayanan</span><h2 class="sec-title">Menuju hari bahagia dalam 3 langkah</h2></div>
+      <div class="flow">
+        <div class="fstep"><div class="n">1</div><h4>Daftar Nikah Online</h4><p>Buat akun dan daftarkan pernikahan melalui SIMKAH Kemenag.</p></div>
+        <div class="fstep"><div class="n">2</div><h4>Ikuti Bimbingan Perkawinan</h4><p>Bekali diri dengan ilmu membangun keluarga sakinah.</p></div>
+        <div class="fstep"><div class="n">3</div><h4>Akad Nikah</h4><p>Akad dilaksanakan sesuai jadwal yang telah ditetapkan.</p></div>
+      </div>
+    </section>
+
+    <!-- ================= INFORMASI KUA ================= -->
+    <section id="informasi" class="sec wrap rv">
+      <div class="sec-head"><div><span class="eyebrow">Informasi KUA</span><h2 class="sec-title">Temukan informasi yang Anda butuhkan</h2></div></div>
+      <div class="info-grid">
+        <button class="info" data-svc="nikah|kehendak"><span class="ic"><i class="bi bi-card-checklist"></i></span><b>Persyaratan Nikah</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-scroll="layanan"><span class="ic"><i class="bi bi-signpost-split"></i></span><b>Alur &amp; Prosedur</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-info="Maklumat & Standar Pelayanan"><span class="ic"><i class="bi bi-patch-check"></i></span><b>Maklumat Pelayanan</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-info="Pengumuman"><span class="ic"><i class="bi bi-megaphone"></i></span><b>Pengumuman</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-info="Unduhan Formulir"><span class="ic"><i class="bi bi-download"></i></span><b>Unduhan Formulir</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-svc="agama|penyuluhan"><span class="ic"><i class="bi bi-book"></i></span><b>Penyuluhan Agama</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-info="Pengaduan & Saran"><span class="ic"><i class="bi bi-chat-heart"></i></span><b>Pengaduan &amp; Saran</b><i class="bi bi-chevron-right"></i></button>
+        <button class="info" data-info="Galeri Kegiatan"><span class="ic"><i class="bi bi-images"></i></span><b>Galeri Kegiatan</b><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- ================= BERITA KUA ================= -->
+    <section id="blog" class="sec wrap rv">
+      <div class="sec-head">
+        <div><span class="eyebrow">Berita KUA</span><h2 class="sec-title">Kabar terbaru dari KUA</h2></div>
+        <button class="btn-x ghost sm" data-info="Semua Berita">Semua Berita <i class="bi bi-arrow-right"></i></button>
+      </div>
+      <div class="posts" id="blogGrid"><!-- diisi oleh renderBlog() --></div>
+    </section>
+
+    <!-- ================= PROFIL KUA ================= -->
+    <section id="profil" class="sec wrap rv">
+      <div class="sec-head">
+        <div><span class="eyebrow">Profil KUA</span><h2 class="sec-title">Struktur Organisasi KUA</h2><p class="sec-sub">Klik kartu untuk melihat detail profil.</p></div>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn-x ghost sm" data-info="Visi & Misi"><i class="bi bi-eye"></i> Visi &amp; Misi</button>
+          <button class="btn-x ghost sm" data-info="Tugas Pokok & Fungsi"><i class="bi bi-diagram-3"></i> Tupoksi</button>
+          <button class="btn-x ghost sm" data-info="Sejarah KUA"><i class="bi bi-clock-history"></i> Sejarah</button>
+        </div>
+      </div>
+      <button class="org-top" data-info="Kepala KUA"><div class="av"><i class="bi bi-person-fill"></i></div><b>Darwis, S.Ag., M.M</b><small>Kepala KUA</small></button>
+      <div class="org-line"></div>
+      <div class="tree-h"></div>
+      <div class="team">
+        <button class="member" data-info="Ahmad Firmansyah, S.Ag."><div class="av">AF</div><b>Ahmad Firmansyah, S.Ag.</b><small>Penyuluh Agama Islam</small></button>
+        <button class="member" data-info="Rabiatul Adawiyah, S.Sos."><div class="av">RA</div><b>Rabiatul Adawiyah, S.Sos.</b><small>Penyuluh Agama Islam</small></button>
+        <button class="member" data-info="Amirullah, S.Pd."><div class="av">AM</div><b>Amirullah, S.Pd.</b><small>Penata Layanan Operasional</small></button>
+        <button class="member" data-info="Yayat, S.Pd.I."><div class="av">YY</div><b>Yayat, S.Pd.I.</b><small>Penata Layanan Operasional</small></button>
+        <button class="member" data-info="Siti Nani Hartini"><div class="av">SN</div><b>Siti Nani Hartini</b><small>Operator Layanan Operasional</small></button>
+      </div>
+    </section>
+
+    <!-- ================= TENTANG KUA ================= -->
+    <section id="tentang" class="sec wrap rv">
+      <div class="about">
+        <div>
+          <span class="eyebrow">Tentang KUA</span>
+          <h2 class="sec-title">Mitra masyarakat dalam membangun keluarga sakinah</h2>
+          <p class="sec-sub" style="max-width:520px">KUA Kecamatan Pulau Laut Tengah melayani pencatatan nikah, bimbingan perkawinan, kemasjidan, zakat dan wakaf, serta penyuluhan agama dengan semangat moderat, ramah, dan terbuka bagi semua.</p>
+          <ul class="ticks">
+            <li><i class="bi bi-check-circle-fill"></i> Pelayanan nikah yang transparan dan tertib administrasi</li>
+            <li><i class="bi bi-check-circle-fill"></i> Bimbingan perkawinan untuk calon pengantin</li>
+            <li><i class="bi bi-check-circle-fill"></i> Penyuluhan agama yang moderat dan inklusif</li>
+          </ul>
+          <button class="btn-x primary" data-info="Tentang KUA">Selengkapnya <i class="bi bi-arrow-right"></i></button>
+        </div>
+        <div class="stats">
+          <div class="stat hl"><b id="statJadwal">–</b><span>Jadwal pernikahan tercatat di sistem KUA</span></div>
+          <div class="stat"><b>6</b><span>Pegawai siap melayani Anda</span></div>
+          <div class="stat"><b>7</b><span>Kelompok layanan KUA</span></div>
+          <div class="stat"><b>Online</b><span>Pendaftaran nikah &amp; bimbingan perkawinan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK KUA ================= -->
+    <section id="kontak" class="sec wrap rv">
+      <div class="sec-head"><div><span class="eyebrow">Kontak KUA</span><h2 class="sec-title">Hubungi &amp; kunjungi kami</h2></div></div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact">
+            <h3 class="h4 mb-0">KUA Kecamatan Pulau Laut Tengah</h3>
+            <div class="citem"><div class="ic"><i class="bi bi-geo-alt-fill"></i></div><div><b>Alamat</b><span>Jalan Tanjung Serdang KM 43 Desa Salino 72151, Kecamatan Pulau Laut Tengah, Kabupaten Kotabaru, Kalimantan Selatan</span></div></div>
+            <div class="citem"><div class="ic"><i class="bi bi-clock-fill"></i></div><div><b>Jam Pelayanan</b><span>Senin – Jumat, 08.00 – 16.00 WITA</span></div></div>
+            <div class="citem"><div class="ic"><i class="bi bi-telephone-fill"></i></div><div><b>Telepon / WhatsApp</b><span>-</span></div></div>
+            <div class="citem"><div class="ic"><i class="bi bi-envelope-fill"></i></div><div><b>Email</b><span>kuapulteng@gmail.com</span></div></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <button class="map" data-info="Peta Lokasi KUA"><div><div class="pin"><i class="bi bi-geo-alt-fill"></i></div><b class="hd d-block fs-5">Peta Lokasi KUA</b><span class="small">Klik untuk membuka peta</span></div></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <div class="wrap rv">
+      <div class="cta">
+        <h2>Siap melangkah ke hari bahagia Anda?</h2>
+        <p>Daftarkan pernikahan secara online melalui SIMKAH, lalu ikuti bimbingan perkawinan bersama kami.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn-x gold" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">Daftar Nikah Online <i class="bi bi-arrow-up-right ar"></i></a>
+          <a class="btn-x ghost" data-bimwin="daftar" href="https://forms.gle/jBU4S2p4zVeKAg12A" target="_blank" rel="noopener">Daftar Bimwin</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="brand mb-3"><div class="logo-box"><i class="bi bi-moon-stars-fill js-logo-fallback"></i><img class="js-logo" alt="Logo Kementerian Agama" hidden></div><div><b>KUA Kecamatan Pulau Laut Tengah</b><small>Kementerian Agama Kab. Kotabaru</small></div></div>
+          <p class="small mb-0" style="max-width:340px">Digitalisasi layanan untuk pelayanan yang lebih cepat, transparan, dan ramah bagi seluruh masyarakat. Ikhlas Beramal.</p>
+        </div>
+        <div class="col-6 col-lg-2"><h6>Navigasi</h6><ul>
+          <li><a href="#" data-scroll="beranda">Home</a></li><li><a href="#" data-scroll="layanan">Layanan KUA</a></li><li><a href="#" data-scroll="informasi">Informasi KUA</a></li><li><a href="#" data-scroll="blog">Berita KUA</a></li></ul></div>
+        <div class="col-6 col-lg-3"><h6>Tentang</h6><ul>
+          <li><a href="#" data-scroll="profil">Profil KUA</a></li><li><a href="#" data-scroll="tentang">Tentang KUA</a></li><li><a href="#" data-scroll="kontak">Kontak KUA</a></li><li><button class="lnk" data-open="modalJadwal">Jadwal Nikah</button></li></ul></div>
+        <div class="col-lg-3"><h6>Layanan Cepat</h6><ul>
+          <li><a data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener">Daftar Nikah Online</a></li>
+          <li><a data-bimwin="daftar" href="https://forms.gle/jBU4S2p4zVeKAg12A" target="_blank" rel="noopener">Pendaftaran Bimwin</a></li>
+          <li><a data-bimwin="form" href="https://bit.ly/BimwinKUA" target="_blank" rel="noopener">Form Bimwin</a></li>
+          <li><button class="lnk" data-bs-toggle="modal" data-bs-target="#modalBukuTamu">Buku Tamu Digital</button></li></ul></div>
+      </div>
+      <div class="copy">
+        <span>© <span id="tahun"></span> KUA Kecamatan Pulau Laut Tengah · Kementerian Agama Republik Indonesia</span>
+        <span>Ikhlas Beramal</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- Modal: Jadwal Nikah (real-time) -->
+  <div class="modal fade" id="modalJadwal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti"><i class="bi bi-calendar-heart"></i></span>Informasi Jadwal Pernikahan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted">Berikut adalah daftar seluruh jadwal pernikahan yang tercatat di KUA Kecamatan Pulau Laut Tengah. Data diperbarui langsung oleh petugas.</p>
+          <div id="kontenJadwalModal"><div class="skel"></div><div class="skel"></div></div>
+        </div>
+        <div class="modal-footer between">
+          <button class="btn-x ghost sm" data-open="modalPin"><i class="bi bi-lock-fill"></i> Panel Admin (Tambah Jadwal)</button>
+          <button class="btn-x primary sm" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Detail Layanan (diisi dinamis) -->
+  <div class="modal fade" id="modalLayanan" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti" id="lyIcon"><i class="bi bi-grid"></i></span><span><span id="lyCat" class="d-block" style="font-family:Inter;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--em-700)"></span><span id="lyTitle">Layanan</span></span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="lyBody"></div>
+        <div class="modal-footer" id="lyFoot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Kalkulator Waris -->
+  <div class="modal fade" id="modalWaris" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti"><i class="bi bi-calculator"></i></span>Kalkulator Waris (Faraidh)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <div class="sec-label" style="margin-top:0">1. Harta peninggalan</div>
+              <div class="mb-2"><label class="form-label" for="wHarta">Total harta peninggalan</label>
+                <div class="money"><span>Rp</span><input type="text" inputmode="numeric" class="form-control" id="wHarta" placeholder="0" oninput="fmtUang(this)"></div></div>
+              <div class="row g-2">
+                <div class="col-6"><label class="form-label" for="wUtang">Utang &amp; biaya jenazah</label>
+                  <div class="money"><span>Rp</span><input type="text" inputmode="numeric" class="form-control" id="wUtang" placeholder="0" oninput="fmtUang(this)"></div></div>
+                <div class="col-6"><label class="form-label" for="wWasiat">Wasiat (jika ada)</label>
+                  <div class="money"><span>Rp</span><input type="text" inputmode="numeric" class="form-control" id="wWasiat" placeholder="0" oninput="fmtUang(this)"></div></div>
+              </div>
+              <div class="form-text">Jika ada harta bersama (gono-gini), pisahkan lebih dahulu bagian pasangan yang masih hidup, lalu masukkan hanya harta milik almarhum/almarhumah.</div>
+              <div class="sec-label">2. Ahli waris yang masih hidup</div>
+              <div class="heirs" id="heirsGrid"></div>
+              <div class="d-flex gap-2 mt-4">
+                <button class="btn-x primary flex-fill" onclick="jalankanWaris()"><i class="bi bi-calculator"></i> Hitung</button>
+                <button class="btn-x ghost" onclick="resetWaris()">Reset</button>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div id="wHasil"><div class="state" style="padding:60px 16px"><i class="bi bi-diagram-3 fs-1 d-block mb-2" style="color:var(--em-600)"></i>Isi data di sebelah kiri, lalu tekan <b>Hitung</b>.</div></div>
+            </div>
+          </div>
+          <div class="callout"><i class="bi bi-exclamation-triangle-fill"></i><b>Penting:</b> kalkulator ini alat bantu edukatif berdasarkan kaidah faraidh umum (mazhab Syafi'i), <u>bukan fatwa atau penetapan resmi</u>. Belum mencakup kakek, nenek, saudara seayah, paman, keponakan, ahli waris pengganti, wasiat wajibah, atau perbedaan mazhab/praktik pengadilan. Untuk kasus nyata, konsultasikan dengan petugas KUA, ulama, atau Pengadilan Agama.</div>
+        </div>
+        <div class="modal-footer between">
+          <button class="btn-x ghost sm" data-open="modalBukuTamu"><i class="bi bi-chat-dots"></i> Tanya Petugas KUA</button>
+          <button class="btn-x primary sm" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Form Buku Tamu Digital (Dilengkapi Foto & AI) -->
+  <div class="modal fade" id="modalBukuTamu" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti"><i class="bi bi-journal-text"></i></span>Buku Tamu Digital KUA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formBukuTamu" onsubmit="kirimBukuTamu(event)">
+            <div class="mb-3"><label class="form-label" for="tamuNama">Nama Lengkap</label>
+              <input type="text" class="form-control" id="tamuNama" placeholder="Nama pengunjung / tamu" autocomplete="name" required></div>
+            <div class="mb-3"><label class="form-label" for="tamuAlamat">Alamat / Asal Desa</label>
+              <input type="text" class="form-control" id="tamuAlamat" placeholder="Contoh: Desa Salino" required></div>
+            <div class="mb-3"><label class="form-label" for="tamuHp">No. HP / WhatsApp</label>
+              <input type="tel" inputmode="tel" class="form-control" id="tamuHp" placeholder="08xxxxxxxxxx" autocomplete="tel" required></div>
+            <div class="mb-3"><label class="form-label" for="tamuTujuan">Maksud / Tujuan</label>
+              <input type="text" class="form-control" id="tamuTujuan" placeholder="Contoh: Konsultasi Pernikahan" required></div>
+            <div class="mb-3"><label class="form-label" for="tamuPetugas">Petugas yang Melayani</label>
+              <select class="form-select" id="tamuPetugas" required>
+                <option value="">-- Pilih Petugas --</option>
+                <option value="Ahmad Firmansyah, S.Ag.">Ahmad Firmansyah, S.Ag.</option>
+                <option value="Rabiatul Adawiyah, S.Sos.">Rabiatul Adawiyah, S.Sos.</option>
+                <option value="Amirullah, S.Pd.">Amirullah, S.Pd.</option>
+                <option value="Yayat, S.Pd.I.">Yayat, S.Pd.I.</option>
+                <option value="Siti Nani Hartini">Siti Nani Hartini</option>
+              </select></div>
+            <div class="mb-3"><label class="form-label" for="tamuCatatan">Catatan / Hasil Pelayanan</label>
+              <textarea class="form-control" id="tamuCatatan" rows="2" placeholder="Catatan singkat (akan diperhalus AI otomatis)..."></textarea></div>
+            <div class="mb-4"><label class="form-label" for="tamuFoto">Foto Dokumentasi (Opsional)</label>
+              <input type="file" class="form-control" id="tamuFoto" accept="image/*">
+              <div class="form-text">Foto otomatis diperkecil agar pengiriman cepat.</div></div>
+            <button type="submit" id="btnSubmitTamu" class="btn-x primary w-100">Kirim Buku Tamu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: PIN Admin -->
+  <div class="modal fade" id="modalPin" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti"><i class="bi bi-shield-lock-fill"></i></span>Akses Admin</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="verifikasiPin(event)">
+            <label class="form-label" for="pinInput">PIN Keamanan Admin KUA</label>
+            <input type="password" inputmode="numeric" autocomplete="off" class="form-control mb-3" id="pinInput" placeholder="Masukkan PIN" required>
+            <button type="submit" id="btnPin" class="btn-x primary w-100">Masuk</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Admin: Tambah Jadwal Nikah -->
+  <div class="modal fade" id="modalAdminJadwal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><span class="ti"><i class="bi bi-calendar-plus"></i></span>Form Admin: Tambah Jadwal Nikah</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formTambahJadwal" onsubmit="simpanJadwalBaru(event)">
+            <div class="mb-3"><label class="form-label" for="admTanggal">Tanggal Nikah</label>
+              <input type="text" class="form-control" id="admTanggal" placeholder="Contoh: Senin, 10 November 2026" required></div>
+            <div class="mb-3"><label class="form-label" for="admWaktu">Waktu</label>
+              <input type="text" class="form-control" id="admWaktu" placeholder="Contoh: 09.00 WITA" required></div>
+            <div class="mb-3"><label class="form-label" for="admSuami">Nama Suami</label>
+              <input type="text" class="form-control" id="admSuami" placeholder="Nama Lengkap Suami" required></div>
+            <div class="mb-3"><label class="form-label" for="admIstri">Nama Istri</label>
+              <input type="text" class="form-control" id="admIstri" placeholder="Nama Lengkap Istri" required></div>
+            <div class="mb-4"><label class="form-label" for="admLokasi">Lokasi Akad</label>
+              <input type="text" class="form-control" id="admLokasi" placeholder="Contoh: Balai Nikah KUA" required></div>
+            <button type="submit" id="btnSimpanJadwal" class="btn-x primary w-100">Simpan Jadwal ke Sistem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Placeholder Umum -->
+  <div class="modal fade" id="modalInfo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalInfoTitle">Informasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body text-center py-5">
+          <div class="logo-box mx-auto mb-3" style="width:64px;height:64px;font-size:1.7rem"><i class="bi bi-hourglass-split"></i></div>
+          <p class="mb-1 fw-bold hd fs-5">Konten sedang disiapkan</p>
+          <p class="small text-muted mb-0">Halaman ini akan segera diisi oleh pengelola KUA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // =====================================================================
+    // KONFIGURASI: API Backend untuk integrasi dengan Github Pages
+    // =====================================================================
+    const CONFIG = {
+      API_BACKEND_URL: "https://script.google.com/macros/s/AKfycbyMXsrr5TMeP0BzAlbcQXXaO4jx3Gm-o6hWSBNMoodkFUaww2t1a6eH4G4sDLpvTenU/exec",
+      SIMKAH_URL: "https://simkah4.kemenag.go.id/",          // Pendaftaran nikah online
+      SIMAS_URL: "https://simas.kemenag.go.id/",             // Sistem Informasi Masjid
+      URL_BIMWIN_DAFTAR: "https://forms.gle/jBU4S2p4zVeKAg12A",
+      URL_BIMWIN_FORM: "https://bit.ly/BimwinKUA",
+      LOGO_URL: "",
+      JAM_BUKA: 480,
+      JAM_TUTUP: 960,
+      TAMPILKAN_NAMA_PASANGAN: true,
+      MAKS_JADWAL_MINI: 3,
+      PIN_DI_SERVER: false,
+      PIN_LAMA: "2026",
+      BLOG_POSTS: [
+        { judul: "Judul berita pertama KUA", tanggal: "Tanggal terbit", kategori: "Berita", gambar: "" },
+        { judul: "Judul kegiatan penyuluhan agama", tanggal: "Tanggal terbit", kategori: "Penyuluhan", gambar: "" },
+        { judul: "Judul informasi layanan pernikahan", tanggal: "Tanggal terbit", kategori: "Layanan", gambar: "" }
+      ]
+    };
+
+    // =====================================================================
+    // KATALOG LAYANAN KUA
+    // Edit teks di sini. Setiap layanan: tujuan, syarat (opsional), langkah (daftar)
+    // atau langkahTab (beberapa tab), catatan (opsional), aksi (tombol, opsional).
+    // Aksi: { label, ikon, gaya:'gold|primary|ghost', url:'@SIMKAH|@SIMAS|@BIMWIN_DAFTAR|@BIMWIN_FORM|https://...' } atau { open:'modalJadwal|modalWaris' }
+    // =====================================================================
+    const LAYANAN = [
+      { id: 'nikah', nama: 'Layanan Nikah dan Rujuk', singkat: 'Nikah & Rujuk', ikon: 'bi-heart-fill',
+        deskripsi: 'Pendaftaran, pengumuman, dan rekomendasi pernikahan.',
+        items: [
+          { id: 'kehendak', nama: 'Pendaftaran Kehendak Nikah', ikon: 'bi-pencil-square', tag: ['online', 'panduan'],
+            ringkas: 'Daftarkan rencana pernikahan Anda secara online lewat SIMKAH atau langsung datang ke KUA.',
+            tujuan: 'Mencatat kehendak calon pengantin untuk menikah agar pemeriksaan berkas, penetapan jadwal akad, dan pencatatan nikah berjalan tertib sesuai ketentuan.',
+            syarat: [
+              'Surat pengantar nikah dari desa/kelurahan (formulir model N).',
+              'Fotokopi KTP dan Kartu Keluarga calon pengantin.',
+              'Fotokopi akta kelahiran atau ijazah.',
+              'Pas foto sesuai ketentuan KUA.',
+              'Surat rekomendasi nikah dari KUA tempat tinggal, bila akad dilaksanakan di luar wilayah tempat tinggal.',
+              'Dokumen tambahan sesuai kondisi, misalnya izin orang tua, akta cerai/kematian, atau dokumen lain yang diminta petugas.'
+            ],
+            langkahTab: {
+              'Daftar Online (SIMKAH)': [
+                'Buka situs SIMKAH Kemenag melalui tombol "Daftar Nikah Online".',
+                'Pilih "Buat Akun" menggunakan alamat email aktif, lalu masukkan kode OTP yang dikirim ke email.',
+                'Masuk (login) ke akun SIMKAH Anda, kemudian pilih menu "Daftar Nikah" pada dashboard.',
+                'Masukkan nomor rekomendasi nikah (jika diminta), lalu lengkapi data calon pengantin.',
+                'Unggah dokumen persyaratan yang diminta sistem.',
+                'Cetak bukti pendaftaran, lalu ikuti arahan KUA untuk verifikasi berkas dan penetapan jadwal akad.'
+              ],
+              'Daftar Offline (Datang ke KUA)': [
+                'Siapkan seluruh berkas persyaratan, termasuk surat pengantar dari desa/kelurahan.',
+                'Datang ke KUA pada jam layanan (Senin – Jumat, 08.00 – 16.00 WITA).',
+                'Petugas memeriksa kelengkapan berkas dan mencatat pendaftaran Anda.',
+                'Calon pengantin (dan wali bila diperlukan) mengikuti pemeriksaan data oleh petugas.',
+                'Petugas menetapkan jadwal akad dan mengarahkan Anda mengikuti bimbingan perkawinan.'
+              ]
+            },
+            catatan: 'Umumnya pendaftaran dilakukan paling lambat 10 hari kerja sebelum akad. Mohon konfirmasi ke petugas karena ketentuan dapat berubah.',
+            aksi: [{ label: 'Daftar Nikah Online (SIMKAH)', ikon: 'bi-arrow-up-right', gaya: 'gold', url: '@SIMKAH' }] },
+
+          { id: 'pengumuman', nama: 'Pengumuman Nikah', ikon: 'bi-megaphone', tag: ['realtime'], miniJadwal: true,
+            ringkas: 'Pengumuman rencana pernikahan dan jadwal akad nikah yang diperbarui secara real-time.',
+            tujuan: 'Memberitahukan rencana pernikahan kepada masyarakat agar bila ada pihak yang mengetahui halangan menurut hukum agama atau perundang-undangan dapat menyampaikannya sebelum akad dilaksanakan.',
+            langkah: [
+              'Setelah berkas pendaftaran dinyatakan lengkap, KUA mengumumkan kehendak nikah sesuai ketentuan.',
+              'Masyarakat dapat melihat jadwal akad nikah yang tercatat melalui halaman ini (diperbarui real-time oleh petugas).',
+              'Bila Anda mengetahui adanya halangan pernikahan, segera sampaikan kepada petugas KUA.'
+            ],
+            aksi: [{ label: 'Lihat Jadwal Nikah Lengkap', ikon: 'bi-calendar-heart', gaya: 'primary', open: 'modalJadwal' }] },
+
+          { id: 'rekomendasi', nama: 'Penerbitan Rekomendasi Nikah', ikon: 'bi-file-earmark-check', tag: ['panduan'],
+            ringkas: 'Surat rekomendasi bagi calon pengantin yang akan menikah di luar wilayah KUA tempat tinggalnya.',
+            tujuan: 'Memberikan rekomendasi dari KUA tempat tinggal calon pengantin agar pernikahan dapat didaftarkan dan dilaksanakan di KUA atau tempat lain di luar wilayah domisili.',
+            langkah: [
+              'Siapkan surat pengantar nikah dari desa/kelurahan serta identitas calon pengantin (KTP dan KK).',
+              'Ajukan permohonan rekomendasi ke KUA tempat tinggal, datang langsung pada jam layanan.',
+              'Petugas memeriksa kelengkapan dan kebenaran data.',
+              'KUA menerbitkan surat rekomendasi nikah beserta nomornya.',
+              'Gunakan surat/nomor rekomendasi tersebut untuk mendaftar nikah di KUA tujuan atau pada SIMKAH.'
+            ],
+            catatan: 'Rekomendasi dibutuhkan bila akad nikah dilangsungkan di luar wilayah tempat tinggal calon pengantin.',
+            aksi: [{ label: 'Lanjut Daftar Nikah (SIMKAH)', ikon: 'bi-arrow-up-right', gaya: 'gold', url: '@SIMKAH' }] }
+        ] },
+
+      { id: 'bimwin', nama: 'Layanan Bimbingan Perkawinan dan Keluarga Sakinah', singkat: 'Bimbingan Keluarga', ikon: 'bi-people-fill',
+        deskripsi: 'Membekali calon pengantin dan keluarga menuju keluarga sakinah, mawaddah, warahmah.',
+        items: [
+          { id: 'bimwin-daftar', nama: 'Pendaftaran Bimbingan Perkawinan Pra Nikah', ikon: 'bi-people', tag: ['online', 'form'],
+            ringkas: 'Daftarkan diri Anda dan pasangan untuk mengikuti bimbingan perkawinan pra nikah.',
+            tujuan: 'Membekali calon pengantin dengan pengetahuan dan keterampilan membangun keluarga sakinah, mawaddah, dan rahmah, mulai dari komunikasi pasangan, pengelolaan konflik, hingga hak dan kewajiban suami istri.',
+            langkah: [
+              'Klik tombol "Daftar Bimwin" dan isi formulir pendaftaran dengan data yang benar.',
+              'Tunggu konfirmasi jadwal bimbingan dari petugas KUA.',
+              'Hadiri sesi bimbingan sesuai jadwal bersama pasangan.',
+              'Setelah mengikuti bimbingan, peserta memperoleh bukti keikutsertaan sesuai ketentuan yang berlaku.'
+            ],
+            aksi: [{ label: 'Daftar Bimwin', ikon: 'bi-arrow-up-right', gaya: 'gold', url: '@BIMWIN_DAFTAR' }] },
+
+          { id: 'bimwin-form', nama: 'Form Bimbingan Perkawinan Pra Nikah', ikon: 'bi-file-earmark-text', tag: ['form'],
+            ringkas: 'Akses formulir yang digunakan dalam rangkaian bimbingan perkawinan pra nikah.',
+            tujuan: 'Menyediakan formulir resmi KUA yang perlu diisi peserta sebagai bagian dari proses bimbingan perkawinan pra nikah.',
+            langkah: [
+              'Buka formulir melalui tombol "Buka Form Bimwin".',
+              'Isi seluruh kolom dengan lengkap dan benar.',
+              'Kirim formulir dan simpan bukti pengiriman bila tersedia.'
+            ],
+            aksi: [{ label: 'Buka Form Bimwin', ikon: 'bi-arrow-up-right', gaya: 'gold', url: '@BIMWIN_FORM' }] },
+
+          { id: 'konseling', nama: 'Bimbingan Konseling dan Mediasi Keluarga', ikon: 'bi-chat-heart', tag: ['panduan'],
+            ringkas: 'Pendampingan bagi keluarga yang menghadapi persoalan rumah tangga, dengan musyawarah dan kekeluargaan.',
+            tujuan: 'Membantu pasangan dan keluarga menyelesaikan persoalan rumah tangga secara musyawarah dan kekeluargaan, serta menguatkan kembali keharmonisan keluarga sesuai tuntunan agama.',
+            langkah: [
+              'Datang langsung ke KUA atau hubungi petugas untuk menjadwalkan konseling.',
+              'Sampaikan persoalan kepada petugas. Informasi yang Anda sampaikan dijaga kerahasiaannya.',
+              'Petugas melakukan konseling dan, bila memungkinkan, mediasi dengan melibatkan kedua belah pihak.',
+              'Bila diperlukan, petugas memberikan arahan tindak lanjut atau rujukan ke lembaga terkait.'
+            ],
+            catatan: 'KUA tidak memutus perceraian. Proses perceraian dilakukan melalui Pengadilan Agama.' }
+        ] },
+
+      { id: 'masjid', nama: 'Layanan Kemasjidan', singkat: 'Kemasjidan', ikon: 'bi-buildings-fill',
+        deskripsi: 'Pendataan, identitas, dan rekomendasi bagi masjid dan musala melalui SIMAS.',
+        items: [
+          { id: 'id-masjid', nama: 'Penerbitan ID Masjid/Musala', ikon: 'bi-qr-code', tag: ['online', 'panduan'],
+            ringkas: 'Identitas resmi masjid/musala pada Sistem Informasi Masjid (SIMAS) Kemenag.',
+            tujuan: 'Memberikan identitas resmi (ID) bagi masjid/musala pada SIMAS Kemenag sebagai dasar pendataan dan akses berbagai layanan serta program kemasjidan.',
+            langkah: [
+              'Pengurus menyiapkan data masjid/musala: nama, alamat, status tanah, susunan pengurus, dan data pendukung lain.',
+              'Pengurus mendaftarkan dan mengisi data masjid/musala pada SIMAS.',
+              'KUA memeriksa dan memverifikasi data, termasuk pengecekan lapangan bila diperlukan.',
+              'Setelah data dinyatakan valid, ID masjid/musala diterbitkan pada SIMAS.'
+            ],
+            aksi: [{ label: 'Buka SIMAS', ikon: 'bi-arrow-up-right', gaya: 'gold', url: '@SIMAS' }] },
+
+          { id: 'sk-simas', nama: 'Penerbitan Surat Keterangan Terdaftar Masjid/Musala pada SIMAS', ikon: 'bi-patch-check', tag: ['panduan'],
+            ringkas: 'Bukti bahwa masjid/musala telah terdaftar di SIMAS untuk keperluan administrasi.',
+            tujuan: 'Menyatakan secara resmi bahwa masjid/musala telah terdaftar pada SIMAS, antara lain sebagai kelengkapan administrasi pengajuan bantuan atau keperluan kelembagaan lainnya.',
+            langkah: [
+              'Pastikan masjid/musala sudah terdaftar dan datanya terbaru pada SIMAS.',
+              'Pengurus mengajukan permohonan surat keterangan ke KUA dengan membawa identitas pengurus dan ID masjid/musala.',
+              'Petugas memeriksa kesesuaian data pada SIMAS.',
+              'Surat keterangan diterbitkan bila data sesuai dan valid.'
+            ],
+            aksi: [{ label: 'Cek Data di SIMAS', ikon: 'bi-arrow-up-right', gaya: 'ghost', url: '@SIMAS' }] },
+
+          { id: 'rek-bantuan-masjid', nama: 'Penerbitan Surat Rekomendasi Bantuan Masjid/Musala', ikon: 'bi-box2-heart', tag: ['panduan'],
+            ringkas: 'Rekomendasi KUA bagi masjid/musala yang akan mengajukan bantuan.',
+            tujuan: 'Memberikan rekomendasi KUA atas kelayakan masjid/musala yang mengajukan bantuan, berdasarkan data dan kondisi yang telah diverifikasi.',
+            syarat: [
+              'Masjid/musala sudah terdaftar pada SIMAS dengan data terbaru.',
+              'Rekening bank atas nama masjid/musala.',
+              'Proposal dan berkas pendukung sesuai petunjuk program bantuan yang berlaku.'
+            ],
+            langkah: [
+              'Pastikan data masjid/musala pada SIMAS sudah valid dan terbaru.',
+              'Siapkan proposal serta berkas pendukung sesuai petunjuk program.',
+              'Ajukan permohonan rekomendasi ke KUA.',
+              'KUA memverifikasi berkas, dan bila diperlukan melakukan pengecekan lapangan.',
+              'Surat rekomendasi diterbitkan apabila persyaratan terpenuhi.'
+            ],
+            catatan: 'Pengajuan proposal bantuan dilakukan secara online sesuai petunjuk resmi Kemenag yang berlaku pada periode pendaftaran.',
+            aksi: [{ label: 'Buka SIMAS', ikon: 'bi-arrow-up-right', gaya: 'ghost', url: '@SIMAS' }] },
+
+          { id: 'ubah-data-masjid', nama: 'Perubahan Data Masjid/Musala', ikon: 'bi-pencil-square', tag: ['panduan'],
+            ringkas: 'Perbarui data pengurus, alamat, fasilitas, atau informasi masjid/musala lainnya.',
+            tujuan: 'Menjaga agar data masjid/musala pada SIMAS tetap akurat dan mutakhir.',
+            langkah: [
+              'Pengurus menyiapkan data perubahan beserta bukti pendukung (misalnya SK pengurus baru).',
+              'Ajukan perubahan melalui SIMAS dan/atau sampaikan ke KUA.',
+              'KUA memverifikasi data perubahan.',
+              'Data diperbarui pada SIMAS setelah dinyatakan valid.'
+            ],
+            aksi: [{ label: 'Buka SIMAS', ikon: 'bi-arrow-up-right', gaya: 'ghost', url: '@SIMAS' }] }
+        ] },
+
+      { id: 'syariah', nama: 'Layanan Konsultasi Syariah', singkat: 'Konsultasi Syariah', ikon: 'bi-chat-square-text-fill',
+        deskripsi: 'Konsultasi hukum Islam: fikih ibadah, hukum waris, dan hukum keluarga.',
+        items: [
+          { id: 'fikih', nama: 'Konsultasi Hukum Islam: Fikih Ibadah', ikon: 'bi-book', tag: ['panduan'],
+            ringkas: 'Konsultasi tentang tata cara dan hukum ibadah sehari-hari.',
+            tujuan: 'Membantu masyarakat memahami tata cara dan hukum ibadah (bersuci, salat, puasa, dan lainnya) dengan rujukan Al-Qur\'an, Hadits, dan pendapat ulama yang muktabar.',
+            langkah: [
+              'Datang ke KUA pada jam layanan atau hubungi petugas untuk menjadwalkan konsultasi.',
+              'Sampaikan pertanyaan atau persoalan ibadah yang ingin dikonsultasikan.',
+              'Petugas (penyuluh/penghulu) memberikan penjelasan beserta rujukannya.'
+            ],
+            catatan: 'Jawaban bersifat edukatif dan referensi, bukan fatwa resmi.',
+            aksi: [{ label: 'Tanya Petugas', ikon: 'bi-chat-dots', gaya: 'primary', open: 'modalBukuTamu' }] },
+
+          { id: 'waris', nama: 'Konsultasi Hukum Islam: Hukum Waris', ikon: 'bi-diagram-3', tag: ['kalkulator', 'panduan'],
+            ringkas: 'Konsultasi pembagian warisan, dilengkapi kalkulator waris (faraidh) untuk simulasi awal.',
+            tujuan: 'Memberikan pemahaman tentang ketentuan pembagian harta waris menurut hukum Islam, sekaligus alat bantu simulasi awal bagian setiap ahli waris.',
+            langkah: [
+              'Kumpulkan informasi: daftar ahli waris yang masih hidup, harta peninggalan, utang, dan wasiat (jika ada).',
+              'Coba simulasi awal menggunakan Kalkulator Waris pada halaman ini.',
+              'Konsultasikan hasilnya kepada petugas KUA untuk penjelasan dan pengecekan kasus Anda.',
+              'Untuk penetapan ahli waris atau pembagian yang mengikat secara hukum, ajukan ke Pengadilan Agama.'
+            ],
+            catatan: 'Kalkulator adalah alat bantu edukatif, bukan fatwa atau penetapan resmi.',
+            aksi: [{ label: 'Buka Kalkulator Waris', ikon: 'bi-calculator', gaya: 'gold', open: 'modalWaris' },
+                   { label: 'Tanya Petugas', ikon: 'bi-chat-dots', gaya: 'ghost', open: 'modalBukuTamu' }] },
+
+          { id: 'hukum-keluarga', nama: 'Konsultasi Hukum Islam: Hukum Keluarga', ikon: 'bi-house-heart', tag: ['panduan'],
+            ringkas: 'Konsultasi seputar pernikahan, hak dan kewajiban suami istri, dan persoalan keluarga.',
+            tujuan: 'Memberikan penjelasan hukum keluarga dalam Islam dan ketentuan yang berlaku di Indonesia, seperti pernikahan, hak dan kewajiban suami istri, serta persoalan keluarga lainnya.',
+            langkah: [
+              'Datang ke KUA pada jam layanan atau hubungi petugas untuk menjadwalkan konsultasi.',
+              'Sampaikan pertanyaan atau persoalan keluarga yang dihadapi.',
+              'Petugas memberikan penjelasan dengan rujukan Al-Qur\'an, Hadits, pendapat ulama, dan peraturan terkait.'
+            ],
+            catatan: 'Jawaban bersifat edukatif dan referensi, bukan fatwa resmi. Perkara perceraian dan sengketa keluarga diputus oleh Pengadilan Agama.',
+            aksi: [{ label: 'Tanya Petugas', ikon: 'bi-chat-dots', gaya: 'primary', open: 'modalBukuTamu' }] }
+        ] },
+
+      { id: 'agama', nama: 'Layanan Bimbingan Agama Islam', singkat: 'Bimbingan Agama', ikon: 'bi-book-half',
+        deskripsi: 'Penyuluhan, edukasi halal, dan upaya menjaga kerukunan umat.',
+        items: [
+          { id: 'penyuluhan', nama: 'Bimbingan dan Penyuluhan Keagamaan', ikon: 'bi-mic', tag: ['panduan'],
+            ringkas: 'Penyuluhan agama Islam yang moderat untuk majelis taklim, kelompok, dan masyarakat.',
+            tujuan: 'Meningkatkan pemahaman dan pengamalan ajaran Islam yang moderat (wasathiyah) serta menguatkan nilai-nilai keluarga dan kemasyarakatan melalui penyuluh agama Islam.',
+            langkah: [
+              'Ajukan permintaan bimbingan/penyuluhan ke KUA (datang langsung atau melalui kontak resmi).',
+              'Sampaikan tema, waktu, tempat, dan sasaran peserta.',
+              'Petugas/penyuluh menyiapkan materi dan menjadwalkan pelaksanaan.',
+              'Kegiatan dilaksanakan dan didokumentasikan sebagai bahan pelaporan.'
+            ],
+            aksi: [{ label: 'Ajukan Lewat Buku Tamu', ikon: 'bi-journal-text', gaya: 'primary', open: 'modalBukuTamu' }] },
+
+          { id: 'halal', nama: 'Sosialisasi dan Edukasi Produk Halal', ikon: 'bi-patch-check-fill', tag: ['panduan'],
+            ringkas: 'Edukasi bagi masyarakat dan pelaku usaha tentang pentingnya produk halal dan sertifikasi halal.',
+            tujuan: 'Meningkatkan literasi masyarakat dan pelaku usaha mengenai konsep produk halal, kewajiban, serta alur sertifikasi halal.',
+            langkah: [
+              'Pelaku usaha, kelompok, atau lembaga mengajukan permintaan sosialisasi ke KUA.',
+              'Tentukan waktu, tempat, dan peserta kegiatan.',
+              'Petugas menyampaikan materi: pengertian halal, manfaat sertifikasi, dan gambaran alur pengajuan sertifikasi halal.',
+              'Peserta dapat berkonsultasi lebih lanjut mengenai tindak lanjut pengajuan sertifikasi.'
+            ] },
+
+          { id: 'konflik', nama: 'Pencegahan Konflik Sosial Berdimensi Keagamaan', ikon: 'bi-shield-check', tag: ['panduan'],
+            ringkas: 'Upaya menjaga kerukunan dan mencegah konflik sosial yang bernuansa keagamaan.',
+            tujuan: 'Menjaga kerukunan umat beragama dan harmoni sosial melalui dialog, deteksi dini, dan penguatan moderasi beragama bersama tokoh agama dan unsur masyarakat.',
+            langkah: [
+              'Masyarakat atau tokoh agama menyampaikan potensi persoalan keagamaan kepada KUA.',
+              'KUA berkoordinasi dengan tokoh agama, tokoh masyarakat, dan pemerintah setempat.',
+              'Dilakukan dialog, mediasi, dan pembinaan sesuai kebutuhan.',
+              'Dilakukan pemantauan dan tindak lanjut agar situasi tetap kondusif.'
+            ],
+            aksi: [{ label: 'Sampaikan Lewat Buku Tamu', ikon: 'bi-journal-text', gaya: 'primary', open: 'modalBukuTamu' }] }
+        ] },
+
+      { id: 'zakat', nama: 'Layanan Bimbingan Zakat dan Wakaf', singkat: 'Zakat & Wakaf', ikon: 'bi-cash-coin',
+        deskripsi: 'Bimbingan zakat, pembuatan akta ikrar wakaf, dan pendaftaran tanah wakaf.',
+        items: [
+          { id: 'bimbingan-zw', nama: 'Bimbingan Zakat dan Wakaf', ikon: 'bi-lightbulb', tag: ['panduan'],
+            ringkas: 'Bimbingan tentang ketentuan zakat dan wakaf serta lembaga pengelola yang sah.',
+            tujuan: 'Memberikan pemahaman ketentuan zakat dan wakaf dalam Islam serta mengarahkan masyarakat kepada lembaga pengelola zakat dan nazhir wakaf yang resmi.',
+            langkah: [
+              'Datang ke KUA atau ajukan permintaan bimbingan/sosialisasi.',
+              'Sampaikan kebutuhan Anda: zakat (jenis dan perhitungan) atau wakaf (jenis harta dan pengelolaan).',
+              'Petugas memberikan penjelasan dan mengarahkan ke lembaga zakat resmi atau nazhir wakaf bila diperlukan.'
+            ] },
+
+          { id: 'aiw', nama: 'Pembuatan AIW atau APAIW', ikon: 'bi-file-earmark-text', tag: ['panduan'],
+            ringkas: 'Akta Ikrar Wakaf (AIW) atau Akta Pengganti Akta Ikrar Wakaf (APAIW) di KUA.',
+            tujuan: 'Membuat akta resmi atas wakaf (khususnya tanah) agar memiliki kekuatan hukum. AIW dibuat saat ikrar wakaf dilaksanakan. APAIW dibuat untuk wakaf yang sudah terjadi tetapi belum memiliki akta.',
+            syarat: [
+              'Identitas wakif (pemberi wakaf) dan nazhir (pengelola wakaf).',
+              'Bukti kepemilikan harta/tanah yang diwakafkan (misalnya sertifikat atau alas hak lain).',
+              'Dua orang saksi.',
+              'Dokumen pendukung lain sesuai arahan petugas.'
+            ],
+            langkah: [
+              'Wakif dan nazhir datang ke KUA membawa dokumen persyaratan.',
+              'Pejabat Pembuat Akta Ikrar Wakaf (PPAIW) memeriksa kelengkapan dan kebenaran data.',
+              'Wakif mengucapkan ikrar wakaf di hadapan PPAIW dan saksi.',
+              'AIW diterbitkan (untuk wakaf yang sudah terjadi sebelumnya diproses melalui APAIW sesuai ketentuan).',
+              'AIW/APAIW digunakan untuk proses pendaftaran tanah wakaf.'
+            ],
+            catatan: 'Persyaratan dan alur rinci mengikuti petunjuk petugas PPAIW KUA.' },
+
+          { id: 'tanah-wakaf', nama: 'Pendaftaran Tanah Wakaf', ikon: 'bi-geo', tag: ['panduan'],
+            ringkas: 'Pendaftaran tanah wakaf agar bersertifikat dan memiliki kepastian hukum.',
+            tujuan: 'Memastikan tanah wakaf terdaftar dan bersertifikat sehingga aman dan terlindungi secara hukum.',
+            langkah: [
+              'Pastikan wakaf telah memiliki AIW atau APAIW dari KUA.',
+              'Nazhir menyiapkan dokumen pendukung (identitas, bukti kepemilikan tanah, dan AIW/APAIW).',
+              'Pendaftaran diajukan ke Kantor Pertanahan dengan pendampingan/koordinasi dari KUA.',
+              'Setelah proses selesai, tanah wakaf memperoleh sertifikat wakaf.'
+            ] }
+        ] },
+
+      { id: 'data', nama: 'Layanan Pengelolaan Data dan Pemanfaatan Informasi Keagamaan', singkat: 'Data Keagamaan', ikon: 'bi-bar-chart-line-fill',
+        deskripsi: 'Data keagamaan, rekomendasi bantuan, dan rekomendasi majelis taklim.',
+        items: [
+          { id: 'data-keagamaan', nama: 'Penyediaan Data Keagamaan dan Data Sarana Keagamaan', ikon: 'bi-database', tag: ['panduan'],
+            ringkas: 'Data keagamaan dan sarana keagamaan di wilayah kecamatan untuk berbagai keperluan.',
+            tujuan: 'Menyediakan data keagamaan dan sarana keagamaan (misalnya masjid, musala, majelis taklim) bagi masyarakat, lembaga, atau peneliti yang memerlukannya.',
+            langkah: [
+              'Ajukan permohonan data ke KUA (datang langsung atau melalui kontak resmi).',
+              'Jelaskan jenis data yang dibutuhkan beserta tujuan penggunaannya.',
+              'Petugas memverifikasi permohonan dan menyiapkan data sesuai ketentuan keterbukaan informasi.',
+              'Data diberikan kepada pemohon.'
+            ] },
+
+          { id: 'rek-bantuan-keagamaan', nama: 'Penerbitan Surat Rekomendasi Bantuan Keagamaan', ikon: 'bi-box2-heart', tag: ['panduan'],
+            ringkas: 'Rekomendasi KUA untuk lembaga/kelompok keagamaan yang mengajukan bantuan.',
+            tujuan: 'Memberikan rekomendasi bagi lembaga atau kelompok keagamaan (misalnya TPQ atau majelis taklim) yang mengajukan bantuan kepada pihak berwenang.',
+            langkah: [
+              'Pastikan lembaga/kelompok sudah terdata dan memiliki kelengkapan administrasi.',
+              'Siapkan proposal, profil lembaga, dan berkas pendukung.',
+              'Ajukan permohonan rekomendasi ke KUA.',
+              'KUA memverifikasi berkas dan, bila perlu, melakukan pengecekan lapangan.',
+              'Surat rekomendasi diterbitkan bila persyaratan terpenuhi.'
+            ] },
+
+          { id: 'rek-majelis', nama: 'Penerbitan Surat Rekomendasi Pendirian Majelis Taklim', ikon: 'bi-journal-bookmark', tag: ['panduan'],
+            ringkas: 'Rekomendasi bagi pengurus yang akan mendirikan dan mendaftarkan majelis taklim.',
+            tujuan: 'Memberikan rekomendasi pendirian majelis taklim sebagai dasar pendaftaran dan pembinaan majelis taklim oleh Kementerian Agama.',
+            langkah: [
+              'Pengurus menyiapkan data: nama majelis, alamat, susunan pengurus, jumlah jamaah, dan materi/kegiatan.',
+              'Ajukan permohonan rekomendasi ke KUA.',
+              'KUA memverifikasi data dan, bila perlu, mengunjungi lokasi.',
+              'Surat rekomendasi diterbitkan apabila persyaratan terpenuhi.',
+              'Pengurus menindaklanjuti pendaftaran sesuai petunjuk Kementerian Agama.'
+            ] }
+        ] }
+    ];
+
+    const NOTE_UMUM = 'Informasi di atas bersifat umum. Persyaratan dan prosedur rinci dapat menyesuaikan ketentuan terbaru, silakan konfirmasi ke petugas KUA.';
+    const TAG_LABEL = { online: 'Online', realtime: 'Real-time', kalkulator: 'Kalkulator', form: 'Formulir', panduan: 'Panduan' };
+
+    // ---------- Util ----------
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function toast(pesan, galat) {
+      const el = document.createElement('div');
+      el.className = 'tst' + (galat ? ' err' : '');
+      el.setAttribute('role', galat ? 'alert' : 'status');
+      el.innerHTML = `<i class="bi ${galat ? 'bi-exclamation-triangle-fill' : 'bi-check-circle-fill'}"></i><span>${esc(pesan)}</span>`;
+      document.getElementById('toasts').appendChild(el);
+      setTimeout(() => { el.style.opacity = '0'; el.style.transition = 'opacity .3s'; setTimeout(() => el.remove(), 320); }, galat ? 6000 : 4200);
+    }
+    function bukaInfo(judul) {
+      document.getElementById('modalInfoTitle').textContent = judul || 'Informasi';
+      bukaModal('modalInfo');
+    }
+    function bukaModal(id) {
+      const target = document.getElementById(id);
+      const terbuka = document.querySelector('.modal.show');
+      if (terbuka && terbuka.id !== id) {
+        terbuka.addEventListener('hidden.bs.modal', function h() {
+          terbuka.removeEventListener('hidden.bs.modal', h);
+          bootstrap.Modal.getOrCreateInstance(target).show();
+        });
+        bootstrap.Modal.getInstance(terbuka).hide();
+      } else {
+        bootstrap.Modal.getOrCreateInstance(target).show();
+      }
+    }
+    function scrollKe(id) {
+      const oc = document.getElementById('menuMobile');
+      const inst = bootstrap.Offcanvas.getInstance(oc);
+      if (inst) inst.hide();
+      const el = document.getElementById(id);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), inst ? 260 : 0);
+    }
+    function resolveUrl(u) {
+      return ({ '@SIMKAH': CONFIG.SIMKAH_URL, '@SIMAS': CONFIG.SIMAS_URL, '@BIMWIN_DAFTAR': CONFIG.URL_BIMWIN_DAFTAR, '@BIMWIN_FORM': CONFIG.URL_BIMWIN_FORM })[u] || u;
+    }
+
+    // Waktu Indonesia Tengah (WITA, UTC+8)
+    function nowWITA() {
+      try {
+        const p = {};
+        new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Makassar', weekday: 'short', year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+          .formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+        const dow = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 }[p.weekday];
+        return { dow, menit: parseInt(p.hour, 10) * 60 + parseInt(p.minute, 10), awalHari: Date.UTC(+p.year, +p.month - 1, +p.day, -8, 0) };
+      } catch (e) {
+        const n = new Date();
+        return { dow: n.getDay(), menit: n.getHours() * 60 + n.getMinutes(), awalHari: new Date(n.getFullYear(), n.getMonth(), n.getDate()).getTime() };
+      }
+    }
+
+    // ---------- Navigasi & interaksi global ----------
+    document.addEventListener('click', function (e) {
+      const sc = e.target.closest('[data-scroll]');
+      if (sc) { e.preventDefault(); scrollKe(sc.getAttribute('data-scroll')); return; }
+      const op = e.target.closest('[data-open]');
+      if (op) { e.preventDefault(); bukaModal(op.getAttribute('data-open')); return; }
+      const sv = e.target.closest('[data-svc]');
+      if (sv) { e.preventDefault(); const [c, s] = sv.getAttribute('data-svc').split('|'); bukaLayanan(c, s); return; }
+      const ct = e.target.closest('[data-cat]');
+      if (ct) { e.preventDefault(); pilihKategori(ct.getAttribute('data-cat')); return; }
+      const tb = e.target.closest('[data-tab]');
+      if (tb) { pilihTab(tb); return; }
+      const inf = e.target.closest('[data-info]');
+      if (inf) { e.preventDefault(); bukaInfo(inf.getAttribute('data-info')); }
+    });
+    function pasangScrollSpy() {
+      const ids = ['beranda','layanan','informasi','blog','profil','tentang','kontak'];
+      const links = document.querySelectorAll('.menu a');
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+        let aktif = ids[0];
+        ids.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 160) aktif = id; });
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('data-scroll') === aktif));
+      }, { passive: true });
+    }
+    function pasangReveal() {
+      const els = document.querySelectorAll('.rv');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .04 });
+      els.forEach(e => io.observe(e));
+    }
+    function pasangTautan() {
+      document.querySelectorAll('[data-simkah]').forEach(a => a.href = CONFIG.SIMKAH_URL);
+      document.querySelectorAll('[data-bimwin="daftar"]').forEach(a => a.href = CONFIG.URL_BIMWIN_DAFTAR);
+      document.querySelectorAll('[data-bimwin="form"]').forEach(a => a.href = CONFIG.URL_BIMWIN_FORM);
+      if (!CONFIG.LOGO_URL) return;
+      document.querySelectorAll('.js-logo').forEach(img => {
+        img.src = CONFIG.LOGO_URL; img.hidden = false;
+        img.onerror = function () { img.hidden = true; };
+        const fb = img.parentElement.querySelector('.js-logo-fallback'); if (fb) fb.style.display = 'none';
+      });
+    }
+
+    // ---------- Blog ----------
+    function renderBlog() {
+      document.getElementById('blogGrid').innerHTML = CONFIG.BLOG_POSTS.map(p => `
+        <button type="button" class="post" data-info="${esc(p.judul)}">
+          <div class="th">${p.gambar ? `<img src="${esc(p.gambar)}" alt="">` : '<i class="bi bi-newspaper"></i>'}<span class="cat">${esc(p.kategori)}</span></div>
+          <div class="bd"><h5>${esc(p.judul)}</h5><small><i class="bi bi-calendar3 me-1"></i>${esc(p.tanggal)}</small></div>
+        </button>`).join('');
+    }
+
+    // =====================================================================
+    // KATALOG LAYANAN
+    // =====================================================================
+    let kategoriAktif = LAYANAN[0].id;
+    function renderKatalog() {
+      document.getElementById('catNav').innerHTML = LAYANAN.map(c => `
+        <button type="button" class="cat-btn${c.id === kategoriAktif ? ' active' : ''}" role="tab" data-cat="${esc(c.id)}" aria-selected="${c.id === kategoriAktif}">
+          <span class="ic"><i class="bi ${esc(c.ikon)}"></i></span>
+          <b><span class="full">${esc(c.nama)}</span><span class="short">${esc(c.singkat)}</span></b>
+          <span class="n">${c.items.length}</span>
+        </button>`).join('');
+      renderPanelKategori();
+    }
+    function renderPanelKategori() {
+      const c = LAYANAN.find(x => x.id === kategoriAktif);
+      document.getElementById('catPanel').innerHTML = `
+        <div class="cat-head"><div class="ic"><i class="bi ${esc(c.ikon)}"></i></div>
+          <div><h3>${esc(c.nama)}</h3><p>${esc(c.deskripsi)}</p></div></div>
+        <div class="svc-list">${c.items.map(s => `
+          <button type="button" class="svc-item" data-svc="${esc(c.id)}|${esc(s.id)}">
+            <div class="top"><span class="ic"><i class="bi ${esc(s.ikon)}"></i></span><b>${esc(s.nama)}</b><i class="bi bi-chevron-right text-muted"></i></div>
+            <p>${esc(s.ringkas)}</p>
+            <div class="tags">${(s.tag || []).map(t => `<span class="tg ${esc(t)}">${esc(TAG_LABEL[t] || t)}</span>`).join('')}</div>
+          </button>`).join('')}</div>`;
+    }
+    function pilihKategori(id) {
+      kategoriAktif = id;
+      document.querySelectorAll('.cat-btn').forEach(b => {
+        const on = b.getAttribute('data-cat') === id;
+        b.classList.toggle('active', on); b.setAttribute('aria-selected', on);
+      });
+      renderPanelKategori();
+    }
+    function pilihTab(btn) {
+      const wrap = btn.closest('.tabs-wrap');
+      wrap.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('on', b === btn));
+      wrap.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('on', p.getAttribute('data-pane') === btn.getAttribute('data-tab')));
+    }
+    function olStep(arr) { return `<ol class="steps-ol">${arr.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`; }
+
+    function bukaLayanan(catId, svcId) {
+      const c = LAYANAN.find(x => x.id === catId); if (!c) return;
+      const s = c.items.find(x => x.id === svcId); if (!s) return;
+      document.getElementById('lyIcon').innerHTML = `<i class="bi ${esc(s.ikon)}"></i>`;
+      document.getElementById('lyCat').textContent = c.nama;
+      document.getElementById('lyTitle').textContent = s.nama;
+
+      let h = `<div class="sec-label" style="margin-top:0">Tujuan Layanan</div><p class="lead-t">${esc(s.tujuan)}</p>`;
+      if (s.syarat && s.syarat.length) h += `<div class="sec-label">Persyaratan Umum</div><ul class="checks">${s.syarat.map(t => `<li><i class="bi bi-check-circle-fill"></i><span>${esc(t)}</span></li>`).join('')}</ul>`;
+      if (s.langkahTab) {
+        const keys = Object.keys(s.langkahTab);
+        h += `<div class="sec-label">Tata Cara</div><div class="tabs-wrap">
+          <div class="tabs-x" role="tablist">${keys.map((k, i) => `<button type="button" role="tab" class="${i === 0 ? 'on' : ''}" data-tab="t${i}">${esc(k)}</button>`).join('')}</div>
+          ${keys.map((k, i) => `<div class="tab-pane${i === 0 ? ' on' : ''}" data-pane="t${i}">${olStep(s.langkahTab[k])}</div>`).join('')}</div>`;
+      } else if (s.langkah) {
+        h += `<div class="sec-label">Tata Cara</div>${olStep(s.langkah)}`;
+      }
+      if (s.miniJadwal) h += `<div class="sec-label">Jadwal Terdekat (Real-time)</div><div class="panel" id="miniJadwal"></div>`;
+      if (s.catatan) h += `<div class="callout"><i class="bi bi-info-circle-fill"></i>${esc(s.catatan)}</div>`;
+      h += `<p class="disclaimer">${esc(NOTE_UMUM)}</p>`;
+      document.getElementById('lyBody').innerHTML = h;
+
+      const foot = (s.aksi || []).map(a => {
+        const cls = `btn-x ${a.gaya || 'primary'}`;
+        const ic = a.ikon ? ` <i class="bi ${esc(a.ikon)}"></i>` : '';
+        return a.url ? `<a class="${cls}" href="${esc(resolveUrl(a.url))}" target="_blank" rel="noopener">${esc(a.label)}${ic}</a>`
+                     : `<button type="button" class="${cls}" data-open="${esc(a.open)}">${esc(a.label)}${ic}</button>`;
+      }).join('');
+      document.getElementById('lyFoot').innerHTML = foot || '';
+      if (s.miniJadwal) renderMiniJadwal();
+      bukaModal('modalLayanan');
+    }
+
+    // =====================================================================
+    // JADWAL NIKAH & FETCH API GITHUB
+    // =====================================================================
+    function updateStatusKantor() {
+      const w = nowWITA();
+      const box = document.getElementById('statusKantor');
+      const txt = document.getElementById('statusText');
+      const akhirPekan = (w.dow === 0 || w.dow === 6);
+      const bukaFmt = n => String(Math.floor(n / 60)).padStart(2, '0') + '.' + String(n % 60).padStart(2, '0');
+      if (!akhirPekan && w.menit >= CONFIG.JAM_BUKA && w.menit <= CONFIG.JAM_TUTUP) {
+        const sisa = CONFIG.JAM_TUTUP - w.menit;
+        box.className = 'float f1 open';
+        txt.textContent = `Buka · tutup dalam ${Math.floor(sisa / 60)} jam ${sisa % 60} menit`;
+      } else if (akhirPekan) {
+        box.className = 'float f1 closed';
+        txt.textContent = 'Tutup · hari libur akhir pekan';
+      } else {
+        box.className = 'float f1 closed';
+        txt.textContent = w.menit < CONFIG.JAM_BUKA ? `Tutup · buka pukul ${bukaFmt(CONFIG.JAM_BUKA)} WITA` : 'Tutup · di luar jam operasional';
+      }
+    }
+
+    function parseTanggalID(tgl, waktu) {
+      if (!tgl) return NaN;
+      const bulan = { januari:0, februari:1, maret:2, april:3, mei:4, juni:5, juli:6, agustus:7, september:8, oktober:9, november:10, desember:11,
+                      jan:0, feb:1, mar:2, apr:3, jun:5, jul:6, agu:7, agt:7, ags:7, sep:8, okt:9, nov:10, des:11 };
+      const m = String(tgl).toLowerCase().match(/(\d{1,2})\s+([a-z]+)\s+(\d{4})/);
+      let jam = 0, mnt = 0;
+      const w = String(waktu || '').match(/(\d{1,2})[.:](\d{2})/);
+      if (w) { jam = parseInt(w[1], 10); mnt = parseInt(w[2], 10); }
+      if (m && bulan[m[2]] !== undefined) return Date.UTC(parseInt(m[3], 10), bulan[m[2]], parseInt(m[1], 10), jam - 8, mnt);
+      const p = Date.parse(tgl);
+      return isNaN(p) ? NaN : p;
+    }
+    function stubTanggal(tgl) {
+      const m = String(tgl || '').match(/(\d{1,2})\s+([A-Za-z]+)/);
+      return m ? { d: m[1], b: m[2].slice(0, 3) } : { d: '•', b: '' };
+    }
+    function samarkanNama(n) {
+      const k = String(n || '').trim().split(/\s+/);
+      return k.length < 2 ? (k[0] || '') : k[0] + ' ' + k[1].charAt(0).toUpperCase() + '.';
+    }
+    function namaTampil(n) { return CONFIG.TAMPILKAN_NAMA_PASANGAN ? esc(n) : esc(samarkanNama(n)); }
+    function barisJadwal(it, lalu) {
+      const s = stubTanggal(it.tanggal);
+      return `<div class="row-j${lalu ? ' past' : ''}">
+          <div class="dateblk"><b>${esc(s.d)}</b><small>${esc(s.b)}</small></div>
+          <div><div class="nm">${namaTampil(it.suami)}<i>&amp;</i>${namaTampil(it.istri)}</div><div class="sub">${esc(it.tanggal)}</div></div>
+          <div class="pill"><i class="bi bi-clock"></i>${esc(it.waktu)}</div>
+          <div class="pill"><i class="bi bi-geo-alt-fill"></i>${esc(it.lokasi)}</div>
+        </div>`;
+    }
+
+    let jadwalOlah = null;
+    function renderMiniJadwal() {
+      const el = document.getElementById('miniJadwal'); if (!el) return;
+      if (jadwalOlah === null) { el.innerHTML = '<div class="state">Memuat jadwal...</div>'; return; }
+      const w = nowWITA();
+      const m = jadwalOlah.filter(x => isNaN(x.t) || x.t >= w.awalHari).slice(0, CONFIG.MAKS_JADWAL_MINI);
+      el.innerHTML = m.length ? m.map(x => barisJadwal(x.it, false)).join('') : '<div class="state">Belum ada jadwal pernikahan mendatang.</div>';
+    }
+
+    // === MENGGUNAKAN FETCH API UNTUK MENGAMBIL JADWAL DARI GITHUB ===
+    async function muatJadwalNikah() {
+      try {
+        const response = await fetch(CONFIG.API_BACKEND_URL + '?action=getJadwal');
+        if (!response.ok) throw new Error('Gagal mengambil data jadwal');
+        const json = await response.json();
+        const data = json.data;
+
+        const modalKonten = document.getElementById('kontenJadwalModal');
+        if (!data || data.length === 0) {
+          jadwalOlah = [];
+          modalKonten.innerHTML = `<div class="state"><i class="bi bi-calendar-x fs-3 d-block mb-2"></i>Belum ada jadwal pernikahan terdaftar.</div>`;
+          document.getElementById('statJadwal').textContent = "0";
+          tampilJadwalTerdekat(null, null); renderMiniJadwal();
+          return;
+        }
+        
+        const w = nowWITA();
+        const olah = data.map(it => ({ it, t: parseTanggalID(it.tanggal, it.waktu) }));
+        olah.sort((a, b) => (isNaN(a.t) ? 1e18 : a.t) - (isNaN(b.t) ? 1e18 : b.t));
+        jadwalOlah = olah;
+        const mendatang = olah.filter(x => isNaN(x.t) || x.t >= w.awalHari);
+        const lalu = olah.filter(x => !(isNaN(x.t) || x.t >= w.awalHari)).reverse();
+
+        let h = `<div class="group-t">Mendatang (${mendatang.length})</div>`;
+        h += mendatang.length ? `<div class="panel">${mendatang.map(x => barisJadwal(x.it, false)).join('')}</div>` : `<div class="state">Belum ada jadwal mendatang.</div>`;
+        if (lalu.length) h += `<div class="group-t mt-4">Sudah berlalu (${lalu.length})</div><div class="panel">${lalu.map(x => barisJadwal(x.it, true)).join('')}</div>`;
+        modalKonten.innerHTML = h;
+        document.getElementById('statJadwal').textContent = data.length;
+
+        const sekarang = Date.now();
+        const terdekat = olah.find(x => !isNaN(x.t) && x.t >= sekarang);
+        tampilJadwalTerdekat(terdekat ? terdekat.it : null, terdekat ? terdekat.t : null);
+        renderMiniJadwal();
+
+      } catch (err) {
+        document.getElementById('kontenJadwalModal').innerHTML = `<div class="state text-danger"><i class="bi bi-wifi-off fs-3 d-block mb-2"></i>Gagal memuat data jadwal. Silakan muat ulang halaman.</div>`;
+        document.getElementById('countdownText').textContent = "Data jadwal belum bisa dimuat.";
+      }
+    }
+    
+    function tampilJadwalTerdekat(item, t) {
+      if (!item) {
+        document.getElementById('countdownText').textContent = "Belum ada jadwal pernikahan mendatang.";
+        ['nxTanggal','nxWaktu','nxLokasi'].forEach(id => document.getElementById(id).textContent = '–');
+        return;
+      }
+      document.getElementById('nxTanggal').textContent = item.tanggal;
+      document.getElementById('nxWaktu').textContent = item.waktu;
+      document.getElementById('nxLokasi').textContent = item.lokasi;
+      mulaiCountdown(t);
+    }
+
+    let timerCountdown = null;
+    function mulaiCountdown(targetTime) {
+      const note = document.getElementById('countdownText');
+      if (timerCountdown) clearInterval(timerCountdown);
+      const pad = n => String(n).padStart(2, '0');
+      function tick() {
+        const d = targetTime - Date.now();
+        if (d < 0) {
+          note.textContent = "Hari Acara Pernikahan Telah Tiba!";
+          ['cdD','cdH','cdM','cdS'].forEach(id => document.getElementById(id).textContent = '00');
+          clearInterval(timerCountdown);
+          return;
+        }
+        document.getElementById('cdD').textContent = pad(Math.floor(d / 86400000));
+        document.getElementById('cdH').textContent = pad(Math.floor((d % 86400000) / 3600000));
+        document.getElementById('cdM').textContent = pad(Math.floor((d % 3600000) / 60000));
+        document.getElementById('cdS').textContent = pad(Math.floor((d % 60000) / 1000));
+        note.textContent = "Menuju akad nikah terdekat di KUA.";
+      }
+      tick();
+      timerCountdown = setInterval(tick, 1000);
+    }
+
+    // ---------- 4. Buku tamu & Fetch POST Github ----------
+    function kompresFoto(file, sisiMaks, kualitas) {
+      return new Promise(function (resolve) {
+        const fallback = () => { const r = new FileReader(); r.onload = e => resolve({ data: e.target.result, nama: file.name, mime: file.type }); r.readAsDataURL(file); };
+        if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return fallback();
+        const url = URL.createObjectURL(file);
+        const img = new Image();
+        img.onload = function () {
+          const skala = Math.min(1, sisiMaks / Math.max(img.width, img.height));
+          const c = document.createElement('canvas');
+          c.width = Math.round(img.width * skala); c.height = Math.round(img.height * skala);
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          URL.revokeObjectURL(url);
+          resolve({ data: c.toDataURL('image/jpeg', kualitas), nama: file.name.replace(/\.\w+$/, '') + '.jpg', mime: 'image/jpeg' });
+        };
+        img.onerror = function () { URL.revokeObjectURL(url); fallback(); };
+        img.src = url;
+      });
+    }
+    
+    function kirimBukuTamu(e) {
+      e.preventDefault();
+      const hp = document.getElementById('tamuHp').value.replace(/[\s\-().]/g, '');
+      if (!/^(\+?62|0)8\d{8,12}$/.test(hp)) { toast('Nomor HP/WhatsApp belum valid. Contoh: 081234567890', true); return; }
+      const btn = document.getElementById('btnSubmitTamu');
+      btn.disabled = true;
+      btn.innerHTML = "Memproses & Menyusun AI...";
+      const fileInput = document.getElementById('tamuFoto');
+      const dataTamu = {
+        nama: document.getElementById('tamuNama').value,
+        alamat: document.getElementById('tamuAlamat').value,
+        hp: document.getElementById('tamuHp').value,
+        tujuan: document.getElementById('tamuTujuan').value,
+        petugas: document.getElementById('tamuPetugas').value,
+        catatan: document.getElementById('tamuCatatan').value,
+        fileData: null, fileName: null, mimeType: null
+      };
+      
+      if (fileInput.files && fileInput.files[0]) {
+        kompresFoto(fileInput.files[0], 1600, 0.82).then(function (f) {
+          dataTamu.fileData = f.data; dataTamu.fileName = f.nama; dataTamu.mimeType = f.mime;
+          kirimDataTamuKeServer(dataTamu);
+        });
+      } else {
+        kirimDataTamuKeServer(dataTamu);
+      }
+    }
+    
+    function resetTombolTamu() { const b = document.getElementById('btnSubmitTamu'); b.disabled = false; b.innerHTML = "Kirim Buku Tamu"; }
+    
+    // FETCH POST UNTUK BUKU TAMU
+    async function kirimDataTamuKeServer(dataTamu) {
+      try {
+        const response = await fetch(CONFIG.API_BACKEND_URL, {
+          method: 'POST',
+          body: JSON.stringify({ action: 'simpanBukuTamu', data: dataTamu })
+        });
+        const res = await response.json();
+        
+        if (res && res.status === "success") {
+            toast(res.message || 'Buku tamu berhasil dikirim.');
+            document.getElementById('formBukuTamu').reset();
+            bootstrap.Modal.getInstance(document.getElementById('modalBukuTamu')).hide();
+        } else {
+            toast("Gagal mengirim buku tamu: " + ((res && res.message) || 'coba lagi'), true);
+        }
+      } catch (err) {
+        toast("Gagal mengirim buku tamu. Terjadi kesalahan jaringan.", true);
+      } finally {
+        resetTombolTamu();
+      }
+    }
+
+    // ---------- 5. Akses admin ----------
+    let pinAdmin = null;
+    document.addEventListener('shown.bs.modal', function (e) { if (e.target.id === 'modalPin') { const i = document.getElementById('pinInput'); i.value = ''; i.focus(); } });
+    function cekAksesAdmin() { bukaModal('modalPin'); }
+    function verifikasiPin(e) {
+      e.preventDefault();
+      const pin = document.getElementById('pinInput').value;
+      if (pin === CONFIG.PIN_LAMA) { 
+          pinAdmin = pin; 
+          bukaModal('modalAdminJadwal'); 
+      } else {
+          toast('PIN salah! Akses ditolak.', true);
+      }
+    }
+    document.addEventListener('hidden.bs.modal', function (e) { if (e.target.id === 'modalAdminJadwal') pinAdmin = null; });
+
+    // ---------- 6. Simpan jadwal baru & Fetch POST Github ----------
+    async function simpanJadwalBaru(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnSimpanJadwal');
+      btn.disabled = true; btn.textContent = 'Menyimpan...';
+      const dataBaru = {
+        tanggal: document.getElementById('admTanggal').value,
+        waktu: document.getElementById('admWaktu').value,
+        suami: document.getElementById('admSuami').value,
+        istri: document.getElementById('admIstri').value,
+        lokasi: document.getElementById('admLokasi').value
+      };
+      const pulih = () => { btn.disabled = false; btn.textContent = 'Simpan Jadwal ke Sistem'; };
+      
+      try {
+        const response = await fetch(CONFIG.API_BACKEND_URL, {
+          method: 'POST',
+          body: JSON.stringify({ action: 'tambahJadwal', data: dataBaru, pin: pinAdmin })
+        });
+        const res = await response.json();
+        
+        pulih();
+        if (res && res.status === "success") {
+          toast(res.message || 'Jadwal berhasil disimpan.');
+          document.getElementById('formTambahJadwal').reset();
+          bootstrap.Modal.getInstance(document.getElementById('modalAdminJadwal')).hide();
+          muatJadwalNikah();
+        } else {
+          toast("Gagal: " + ((res && res.message) || 'terjadi kesalahan'), true);
+        }
+      } catch (err) {
+        pulih();
+        toast("Gagal menyimpan jadwal. Terjadi kesalahan jaringan.", true);
+      }
+    }
+
+    // =====================================================================
+    // KALKULATOR WARIS (FARAIDH): alat bantu edukatif, mazhab Syafi'i
+    // =====================================================================
+    // ==WARIS-START==
+    function gcd(a, b) { return b === 0 ? Math.abs(a) : gcd(b, a % b); }
+    function Fr(n, d) { if (d === undefined) d = 1; if (d < 0) { n = -n; d = -d; } const g = gcd(n, d) || 1; return { n: n / g, d: d / g }; }
+    const fAdd = (a, b) => Fr(a.n * b.d + b.n * a.d, a.d * b.d);
+    const fSub = (a, b) => Fr(a.n * b.d - b.n * a.d, a.d * b.d);
+    const fMul = (a, b) => Fr(a.n * b.n, a.d * b.d);
+    const fDiv = (a, b) => Fr(a.n * b.d, a.d * b.n);
+    const fPos = a => a.n > 0;
+    const fVal = a => a.n / a.d;
+    const fStr = a => a.n === 0 ? '0' : (a.d === 1 ? String(a.n) : a.n + '/' + a.d);
+
+    const AHLI_WARIS = [
+      { k: 'suami', label: 'Suami', hint: 'Jika almarhumah wanita', max: 1 },
+      { k: 'istri', label: 'Istri', hint: 'Jika almarhum pria (maks. 4)', max: 4 },
+      { k: 'ayah', label: 'Ayah', hint: '', max: 1 },
+      { k: 'ibu', label: 'Ibu', hint: '', max: 1 },
+      { k: 'anakL', label: 'Anak laki-laki', hint: '', max: 30 },
+      { k: 'anakP', label: 'Anak perempuan', hint: '', max: 30 },
+      { k: 'cucuL', label: 'Cucu laki-laki', hint: 'Dari anak laki-laki', max: 30 },
+      { k: 'cucuP', label: 'Cucu perempuan', hint: 'Dari anak laki-laki', max: 30 },
+      { k: 'sdrL', label: 'Saudara laki-laki kandung', hint: '', max: 30 },
+      { k: 'sdrP', label: 'Saudara perempuan kandung', hint: '', max: 30 },
+      { k: 'sbL', label: 'Saudara laki-laki seibu', hint: '', max: 30 },
+      { k: 'sbP', label: 'Saudara perempuan seibu', hint: '', max: 30 }
+    ];
+
+    function hitungWaris(h) {
+      const ONE = Fr(1), ZERO = Fr(0);
+      const rows = {}, notes = [];
+      AHLI_WARIS.forEach(a => { if (h[a.k] > 0) rows[a.k] = { key: a.k, label: a.label + (a.hint && a.k.startsWith('cucu') ? ' (' + a.hint.toLowerCase() + ')' : ''), count: h[a.k], eff: h[a.k], fard: ZERO, sisa: ZERO, dasar: [], mahjub: null }; });
+      const eff = k => rows[k] ? rows[k].eff : 0;
+      const block = (k, why) => { if (rows[k] && rows[k].eff > 0) { rows[k].eff = 0; rows[k].mahjub = why; } };
+      const setF = (k, f, d) => { rows[k].fard = f; rows[k].dasar.push(d); };
+
+      // --- Hijab (penghalang) ---
+      if (eff('anakL') > 0) { block('cucuL', 'Terhalang oleh anak laki-laki'); block('cucuP', 'Terhalang oleh anak laki-laki'); }
+      else if (eff('cucuP') > 0 && eff('cucuL') === 0 && eff('anakP') >= 2) block('cucuP', 'Terhalang oleh dua anak perempuan atau lebih');
+      const maleDesc = eff('anakL') + eff('cucuL') > 0;
+      const femaleDesc = eff('anakP') + eff('cucuP') > 0;
+      const desc = maleDesc || femaleDesc;
+      const sibTotal = h.sdrL + h.sdrP + h.sbL + h.sbP;
+      if (maleDesc) { block('sdrL', 'Terhalang oleh keturunan laki-laki'); block('sdrP', 'Terhalang oleh keturunan laki-laki'); }
+      else if (eff('ayah') > 0) { block('sdrL', 'Terhalang oleh ayah'); block('sdrP', 'Terhalang oleh ayah'); }
+      if (desc) { block('sbL', 'Terhalang oleh anak/cucu'); block('sbP', 'Terhalang oleh anak/cucu'); }
+      else if (eff('ayah') > 0) { block('sbL', 'Terhalang oleh ayah'); block('sbP', 'Terhalang oleh ayah'); }
+
+      // --- Ashhabul furudh (bagian pasti) ---
+      let spouseF = ZERO;
+      if (eff('suami')) { spouseF = desc ? Fr(1, 4) : Fr(1, 2); setF('suami', spouseF, 'Fardhu ' + fStr(spouseF)); }
+      if (eff('istri')) { spouseF = desc ? Fr(1, 8) : Fr(1, 4); setF('istri', spouseF, 'Fardhu ' + fStr(spouseF) + ' (dibagi rata)'); }
+      if (eff('ibu')) {
+        if (desc || sibTotal >= 2) setF('ibu', Fr(1, 6), 'Fardhu 1/6');
+        else if (eff('ayah') > 0 && (eff('suami') || eff('istri'))) {
+          setF('ibu', fMul(Fr(1, 3), fSub(ONE, spouseF)), 'Fardhu 1/3 dari sisa (gharawain)');
+          notes.push('Kasus Gharawain (Umariyatain): ibu menerima 1/3 dari sisa setelah bagian suami/istri.');
+        } else setF('ibu', Fr(1, 3), 'Fardhu 1/3');
+      }
+      if (eff('ayah') && desc) setF('ayah', Fr(1, 6), 'Fardhu 1/6');
+      if (eff('anakP') > 0 && eff('anakL') === 0) setF('anakP', eff('anakP') === 1 ? Fr(1, 2) : Fr(2, 3), 'Fardhu ' + (eff('anakP') === 1 ? '1/2' : '2/3 (dibagi rata)'));
+      if (eff('cucuP') > 0 && eff('anakL') === 0 && eff('cucuL') === 0) {
+        if (eff('anakP') === 0) setF('cucuP', eff('cucuP') === 1 ? Fr(1, 2) : Fr(2, 3), 'Fardhu ' + (eff('cucuP') === 1 ? '1/2' : '2/3 (dibagi rata)'));
+        else if (eff('anakP') === 1) setF('cucuP', Fr(1, 6), 'Fardhu 1/6 (penyempurna 2/3)');
+      }
+      const musy = !desc && eff('ayah') === 0 && eff('suami') > 0 && eff('ibu') > 0 && (eff('sbL') + eff('sbP')) >= 2 && eff('sdrL') > 0;
+      if (musy) {
+        const tot = eff('sbL') + eff('sbP') + eff('sdrL') + eff('sdrP');
+        ['sbL', 'sbP', 'sdrL', 'sdrP'].forEach(k => { if (eff(k) > 0) setF(k, Fr(eff(k), 3 * tot), 'Fardhu 1/3 dibagi rata (musytarakah)'); });
+        notes.push("Kasus Musytarakah: saudara kandung bergabung dengan saudara seibu dalam 1/3 dan dibagi rata (pendapat mazhab Syafi'i dan Maliki). Sebagian mazhab lain (Hanafi, Hanbali) menggugurkan saudara kandung dalam kasus ini.");
+      } else {
+        if (eff('sdrP') > 0 && eff('sdrL') === 0 && !femaleDesc) setF('sdrP', eff('sdrP') === 1 ? Fr(1, 2) : Fr(2, 3), 'Fardhu ' + (eff('sdrP') === 1 ? '1/2' : '2/3 (dibagi rata)'));
+        const sb = eff('sbL') + eff('sbP');
+        if (sb > 0) {
+          const f = sb === 1 ? Fr(1, 6) : Fr(1, 3);
+          ['sbL', 'sbP'].forEach(k => { if (eff(k) > 0) setF(k, fMul(f, Fr(eff(k), sb)), 'Fardhu ' + fStr(f) + (sb > 1 ? ' (dibagi rata)' : '')); });
+        }
+      }
+
+      let sum = ZERO;
+      Object.values(rows).forEach(r => { if (r.eff > 0) sum = fAdd(sum, r.fard); });
+      if (sum.n > sum.d) { // Aul
+        Object.values(rows).forEach(r => { if (r.eff > 0 && fPos(r.fard)) { r.fard = fDiv(r.fard, sum); r.dasar.push('Aul'); } });
+        notes.push('Kasus Aul: jumlah bagian pokok melebihi 1 (' + fStr(sum) + '), sehingga setiap bagian dikurangi secara proporsional.');
+        sum = ONE;
+      }
+      let remain = fSub(ONE, sum), leftover = ZERO;
+
+      // --- Ashabah (penerima sisa) ---
+      let ash = [];
+      if (eff('anakL') > 0) ash = [['anakL', 2 * eff('anakL')], ['anakP', eff('anakP')]];
+      else if (eff('cucuL') > 0) ash = [['cucuL', 2 * eff('cucuL')], ['cucuP', eff('cucuP')]];
+      else if (eff('ayah') > 0) ash = [['ayah', 1]];
+      else if (!musy && eff('sdrL') > 0) ash = [['sdrL', 2 * eff('sdrL')], ['sdrP', eff('sdrP')]];
+      else if (!musy && eff('sdrP') > 0 && femaleDesc) ash = [['sdrP', eff('sdrP')]];
+      ash = ash.filter(a => a[1] > 0 && eff(a[0]) > 0);
+
+      if (fPos(remain) && ash.length) {
+        const units = ash.reduce((s, a) => s + a[1], 0);
+        ash.forEach(([k, u]) => {
+          rows[k].sisa = fMul(remain, Fr(u, units));
+          const pasangan = ash.length > 1;
+          rows[k].dasar.push((k === 'sdrP' && eff('sdrL') === 0) ? "Ashabah ma'al ghair (bersama anak/cucu perempuan)"
+            : pasangan ? (k.endsWith('P') ? 'Ashabah bil ghair (2 : 1 dengan saudara laki-lakinya)' : 'Ashabah (2 : 1 dengan perempuan)')
+            : 'Ashabah (menerima sisa)');
+        });
+        remain = ZERO;
+      } else if (fPos(remain)) { // Radd
+        const rec = Object.values(rows).filter(r => r.eff > 0 && fPos(r.fard) && r.key !== 'suami' && r.key !== 'istri');
+        if (rec.length) {
+          let tot = ZERO; rec.forEach(r => tot = fAdd(tot, r.fard));
+          rec.forEach(r => { r.sisa = fMul(remain, fDiv(r.fard, tot)); r.dasar.push('Radd (tambahan dari sisa)'); });
+          notes.push('Kasus Radd: setelah bagian pokok dibagikan masih ada sisa dan tidak ada ahli waris ashabah, sehingga sisa dikembalikan kepada ahli waris (selain suami/istri) sesuai perbandingan bagiannya.');
+          remain = ZERO;
+        } else { leftover = remain; remain = ZERO; }
+      }
+      if (fPos(leftover)) notes.push('Terdapat sisa harta ' + fStr(leftover) + ' yang tidak jatuh kepada ahli waris yang dipilih (dalam kasus ini hanya suami/istri). Penanganannya berbeda menurut mazhab/praktik; konsultasikan dengan petugas KUA atau Pengadilan Agama.');
+      Object.values(rows).forEach(r => { r.total = r.eff > 0 ? fAdd(r.fard, r.sisa) : ZERO; });
+      return { rows: AHLI_WARIS.map(a => rows[a.k]).filter(Boolean), notes, leftover };
+    }
+    // ==WARIS-END==
+
+    // ---- UI kalkulator ----
+    function rupiah(n) { return 'Rp ' + Math.round(n).toLocaleString('id-ID'); }
+    function angka(id) { return parseInt(String(document.getElementById(id).value).replace(/\D/g, ''), 10) || 0; }
+    function fmtUang(el) { const v = el.value.replace(/\D/g, ''); el.value = v ? parseInt(v, 10).toLocaleString('id-ID') : ''; }
+    function renderHeirs() {
+      document.getElementById('heirsGrid').innerHTML = AHLI_WARIS.map(a => `
+        <div class="heir"><div><b>${esc(a.label)}</b>${a.hint ? `<small>${esc(a.hint)}</small>` : ''}</div>
+          <div class="stp"><button type="button" onclick="stepWaris('${a.k}',-1)" aria-label="Kurangi ${esc(a.label)}">−</button>
+            <input type="number" id="h_${a.k}" value="0" min="0" max="${a.max}" inputmode="numeric" aria-label="Jumlah ${esc(a.label)}">
+            <button type="button" onclick="stepWaris('${a.k}',1)" aria-label="Tambah ${esc(a.label)}">+</button></div></div>`).join('');
+    }
+    function stepWaris(k, d) {
+      const a = AHLI_WARIS.find(x => x.k === k), el = document.getElementById('h_' + k);
+      el.value = Math.min(a.max, Math.max(0, (parseInt(el.value, 10) || 0) + d));
+    }
+    function resetWaris() {
+      ['wHarta', 'wUtang', 'wWasiat'].forEach(id => document.getElementById(id).value = '');
+      AHLI_WARIS.forEach(a => document.getElementById('h_' + a.k).value = 0);
+      document.getElementById('wHasil').innerHTML = '<div class="state" style="padding:60px 16px"><i class="bi bi-diagram-3 fs-1 d-block mb-2" style="color:var(--em-600)"></i>Isi data di sebelah kiri, lalu tekan <b>Hitung</b>.</div>';
+    }
+    function jalankanWaris() {
+      const h = {}; AHLI_WARIS.forEach(a => { h[a.k] = Math.min(a.max, Math.max(0, parseInt(document.getElementById('h_' + a.k).value, 10) || 0)); });
+      const harta = angka('wHarta'), utang = angka('wUtang'), wasiat = angka('wWasiat');
+      if (harta <= 0) { toast('Masukkan total harta peninggalan terlebih dahulu.', true); return; }
+      if (h.suami > 0 && h.istri > 0) { toast('Suami dan istri tidak dapat dipilih bersamaan. Pilih salah satu sesuai jenis kelamin almarhum/almarhumah.', true); return; }
+      if (Object.values(h).reduce((s, x) => s + x, 0) === 0) { toast('Pilih minimal satu ahli waris.', true); return; }
+
+      const sisaUtang = Math.max(0, harta - utang);
+      const maksWasiat = sisaUtang / 3;
+      const wasiatEf = Math.min(wasiat, maksWasiat);
+      const net = sisaUtang - wasiatEf;
+      const res = hitungWaris(h);
+      const extra = [];
+      if (utang > harta) extra.push('Utang dan biaya melebihi harta; tidak ada harta yang dapat dibagikan.');
+      if (wasiat > maksWasiat) extra.push('Wasiat dibatasi maksimal 1/3 dari harta setelah utang (' + rupiah(maksWasiat) + '). Kelebihannya hanya sah bila disetujui seluruh ahli waris.');
+
+      let tot = 0;
+      const baris = res.rows.map(r => {
+        const total = fVal(r.total) * net, per = r.eff > 0 ? total / r.count : 0; tot += total;
+        if (r.eff === 0) return `<tr class="mh"><td><b>${esc(r.label)}</b></td><td>${r.count}</td><td>–</td><td>${esc(r.mahjub || 'Terhalang')}</td><td>Rp 0</td><td>–</td></tr>`;
+        return `<tr><td><b>${esc(r.label)}</b></td><td>${r.count}</td><td class="frac">${fStr(r.total)}</td><td>${r.dasar.map(esc).join('<br>')}</td><td><b>${rupiah(total)}</b></td><td>${rupiah(per)}</td></tr>`;
+      }).join('');
+
+      document.getElementById('wHasil').innerHTML = `
+        <div class="res-sum">
+          <div><small>Total harta</small><b>${rupiah(harta)}</b></div>
+          <div><small>Utang &amp; biaya</small><b>${rupiah(Math.min(utang, harta))}</b></div>
+          <div><small>Wasiat</small><b>${rupiah(wasiatEf)}</b></div>
+          <div><small>Harta dibagikan</small><b>${rupiah(net)}</b></div>
+        </div>
+        <div class="tbl-w"><table><thead><tr><th>Ahli waris</th><th>Jml</th><th>Bagian</th><th>Dasar</th><th>Jumlah (Rp)</th><th>Per orang</th></tr></thead><tbody>${baris}</tbody></table></div>
+        <p class="small text-muted mt-2 mb-0">Total terbagi: <b>${rupiah(tot)}</b>${fPos(res.leftover) ? ' (ada sisa, lihat catatan)' : ''}. Pembulatan ke rupiah terdekat dapat menimbulkan selisih kecil.</p>
+        ${(res.notes.length || extra.length) ? `<ul class="note-l">${extra.concat(res.notes).map(n => `<li><i class="bi bi-info-circle-fill"></i><span>${esc(n)}</span></li>`).join('')}</ul>` : ''}`;
+    }
+
+    window.onload = function () {
+      document.getElementById('tahun').textContent = new Date().getFullYear();
+      pasangTautan();
+      renderBlog();
+      renderKatalog();
+      renderHeirs();
+      pasangReveal();
+      pasangScrollSpy();
+      updateStatusKantor();
+      setInterval(updateStatusKantor, 60000);
+      muatJadwalNikah();
+    };
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
