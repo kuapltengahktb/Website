@@ -93,54 +93,23 @@
     .sec-sub{color:var(--muted); max-width:560px; margin:12px 0 0}
     .sec-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:34px}
 
-    /* ---------- Hero ---------- */
-    .hero{position:relative; overflow:hidden; padding:56px 0 24px}
-    .hero::before{content:""; position:absolute; inset:0; z-index:0;
-      background:
-        radial-gradient(900px 420px at 85% -10%, rgba(15,133,86,.20), transparent 60%),
-        radial-gradient(700px 360px at 0% 10%, rgba(245,197,66,.20), transparent 60%),
-        linear-gradient(180deg,#fff 0%, var(--bg) 100%)}
-    .hero::after{content:""; position:absolute; inset:0; z-index:0; background-image:var(--pattern); filter:invert(1); opacity:.55; -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%); mask-image:linear-gradient(180deg,#000,transparent 70%)}
-    .hero .wrap{position:relative; z-index:1}
-    .kicker{display:inline-flex; align-items:center; gap:10px; padding:6px 14px 6px 6px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:var(--sh-sm); font-size:.8rem; font-weight:600; color:var(--em-800)}
-    .kicker .lg{width:26px; height:26px; border-radius:50%; background:var(--em-700); color:var(--gold); display:grid; place-items:center; font-size:.8rem}
-    .hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem); line-height:1.02; margin:22px 0 18px}
-    .hero h1 .grad{background:linear-gradient(100deg,var(--em-700),var(--em-600) 55%,var(--gold-d)); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .hero .lead{font-size:1.08rem; color:var(--muted); max-width:540px}
-    .trust{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:26px; font-size:.82rem; font-weight:600; color:var(--text)}
-    .trust span{display:inline-flex; align-items:center; gap:7px}
-    .trust i{color:var(--em-600)}
+    /* ---------- Hero & Stage Fix Mobile ---------- */
+    .hero{position:relative; overflow:hidden; padding:24px 0 16px}
+    .hero h1{font-size:clamp(2.1rem,5.6vw,4.4rem); line-height:1.02; margin:12px 0 12px}
+    .hero .lead{font-size:0.98rem; color:var(--muted); max-width:540px}
 
-    .stage{position:relative; min-height:470px}
-    .dash{position:absolute; left:40px; right:0; top:34px; background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh-lg); padding:22px}
-    .dash-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px}
-    .dash-top b{font-family:'Manrope'; font-size:.95rem; color:var(--ink)}
-    .live{display:inline-flex; align-items:center; gap:6px; font-size:.7rem; font-weight:700; color:var(--em-700); background:var(--em-100); padding:4px 10px; border-radius:999px}
-    .live::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--em-600); animation:blink 1.6s infinite}
-    @keyframes blink{50%{opacity:.25}}
-    .cd{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
-    .cd div{background:linear-gradient(180deg,var(--em-50),#fff); border:1px solid var(--em-100); border-radius:14px; text-align:center; padding:14px 4px 10px}
-    .cd b{display:block; font-family:'Manrope'; font-size:2rem; line-height:1; color:var(--em-800); font-weight:800; font-variant-numeric:tabular-nums}
-    .cd small{font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
-    .cd-note{font-size:.8rem; color:var(--muted); margin:12px 0 0; display:flex; align-items:center; gap:7px}
-    .cd-note i{color:var(--gold-d)}
-    .nx{display:grid; gap:10px; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line)}
-    .nx div{display:flex; align-items:center; gap:10px; font-size:.88rem; font-weight:600; color:var(--ink)}
-    .nx i{width:30px; height:30px; border-radius:9px; background:var(--em-50); color:var(--em-700); display:grid; place-items:center; font-size:.9rem; flex:none}
-    .float{position:absolute; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:var(--sh-md); padding:12px 14px; display:flex; align-items:center; gap:11px; z-index:2}
-    .float.f1{left:0; top:0}
-    .float.f2{left:0; bottom:0; text-decoration:none; color:var(--ink); transition:.2s; max-width:290px}
-    .float.f2:hover{transform:translateY(-3px); box-shadow:var(--sh-lg); color:var(--ink)}
-    .float .ic{width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:1.1rem; flex:none}
-    .float small{display:block; color:var(--muted); font-size:.7rem; line-height:1.2}
-    .float b{display:block; font-size:.82rem; line-height:1.25; font-family:'Manrope'; color:var(--ink)}
-    .dot{width:10px; height:10px; border-radius:50%; background:#9aa8a1; flex:none}
-    .open .dot{background:#1fb86a; box-shadow:0 0 0 0 rgba(31,184,106,.6); animation:ring 1.6s infinite}
-    .closed .dot{background:#e5604d}
-    @keyframes ring{to{box-shadow:0 0 0 10px rgba(31,184,106,0)}}
-    @media (max-width:991px){
-      .stage{min-height:0; margin-top:44px; display:grid; gap:14px}
-      .dash,.float{position:static} .float.f2{max-width:none}
+    .stage{position:relative; min-height:380px; margin-top:20px}
+    .dash{position:relative; background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh-lg); padding:20px; width:100%; margin-bottom:14px}
+    
+    /* Kotak Status Kantor (Hanya 1 di dalam stage agar tidak duplikat) */
+    .float.f1{position:relative; width:100%; margin-bottom:14px; left:0; top:0; box-shadow:var(--sh-sm)}
+    .float.f2{position:relative; width:100%; left:0; bottom:0; text-decoration:none; color:var(--ink); transition:.2s; box-shadow:var(--sh-sm)}
+    
+    @media (min-width:991px){
+      .stage{min-height:470px; margin-top:0}
+      .dash{position:absolute; left:40px; right:0; top:34px; margin-bottom:0}
+      .float.f1{position:absolute; left:0; top:0; width:auto}
+      .float.f2{position:absolute; left:0; bottom:0; width:290px}
     }
 
     /* ---------- Layanan ---------- */
@@ -523,24 +492,25 @@
     <!-- ================= HOME ================= -->
     <section id="beranda" class="hero">
       <div class="wrap">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center g-4">
           <div class="col-lg-6">
             <span class="kicker" id="kickerStatus"><span class="lg"><i class="bi bi-clock-history"></i></span> <span id="kickerStatusText">Memuat status kantor...</span></span>
             <h1>KUA Kecamatan <span class="grad">Pulau Laut Tengah</span></h1>
             <p class="lead">Daftar nikah online, pantau jadwal akad, dan ikuti bimbingan perkawinan. Layanan Kementerian Agama yang lebih dekat dan mudah untuk masyarakat Pulau Laut Tengah.</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
+            <div class="d-flex flex-wrap gap-3 mt-3">
               <a class="btn-x gold" data-simkah href="https://simkah4.kemenag.go.id/" target="_blank" rel="noopener"><i class="bi bi-heart-fill"></i> Daftar Nikah Online <i class="bi bi-arrow-up-right ar"></i></a>
               <button class="btn-x ghost" data-scroll="layanan"><i class="bi bi-grid"></i> Lihat Layanan KUA</button>
             </div>
             <div class="trust">
-              <span><i class="bi bi-shield-check"></i> Resmi Kementerian Agama RI</span>
-              <span><i class="bi bi-laptop"></i> Pendaftaran online lewat SIMKAH</span>
-              <span><i class="bi bi-geo-alt"></i> Kab. Kotabaru, Kalsel</span>
+              <span><i class="bi bi-shield-check"></i> Resmi Kemenag RI</span>
+              <span><i class="bi bi-laptop"></i> Via SIMKAH</span>
+              <span><i class="bi bi-geo-alt"></i> Kab. Kotabaru</span>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="stage">
+              <!-- Status Kantor (Hanya 1 di sini agar rapi) -->
               <div class="float f1" id="statusKantor"><span class="dot"></span><div><small>Status kantor</small><b id="statusText">Memuat status...</b></div></div>
 
               <div class="dash" id="countdownContainer">
@@ -570,7 +540,6 @@
         </div>
       </div>
     </section>
-
     <!-- ================= LAYANAN KUA ================= -->
     <section id="layanan" class="sec wrap rv">
       <div class="sec-head">
